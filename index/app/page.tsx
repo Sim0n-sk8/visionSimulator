@@ -3,22 +3,31 @@
 import { useState, useEffect } from 'react';
 
 const MyopiaSimulator = () => {
+  const sliderNumbersRef = useRef<HTMLDivElement | null>(null);
+  const numberRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
 type SceneKey = 's' | 'r' | 'p';
-
-
 
   const [currentScene, setCurrentScene] = useState<SceneKey>('s');
   const [sliderValue, setSliderValue] = useState(0);
 
+  useEffect(() => {
+    // Only scroll on mobile
+    if (window.innerWidth > 600) return;
+    const activeEl = numberRefs.current[sliderValue];
+    if (activeEl && sliderNumbersRef.current) {
+      activeEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [sliderValue]);
+
   const sliderRange = Array.from({ length: 11 }, (_, i) => i);
 
   const getThumbColor = (value: number): string => {
-  if (value <= 2) return '#00ff88';
-  if (value <= 4) return '#ffaa00';
-  if (value <= 6) return '#ff4444';
-  if (value <= 8) return '#cc0000';
-  return '#990000';
+  if (value <= 2) return '#5ca6dc';
+  if (value <= 4) return '#5ca6dc';
+  if (value <= 6) return '#5ca6dc';
+  if (value <= 8) return '#5ca6dc';
+  return '#5ca6dc';
 };
 
 
@@ -63,10 +72,11 @@ const imagePrefix: Record<SceneKey, string> = {
       </div>
 
       <div className="sliderContainer">
-        <div className="sliderNumbers">
+        <div className="sliderNumbers" ref={sliderNumbersRef}>
           {sliderRange.map((num) => (
             <span
               key={num}
+              ref={el => { numberRefs.current[num] = el; }}
               className={`number ${sliderValue === num ? 'active' : ''}`}
             >
               {-num}

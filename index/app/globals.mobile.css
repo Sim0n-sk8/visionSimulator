@@ -1,0 +1,85 @@
+
+
+}
+
+  .title {
+    font-size: 1.2rem;
+    top: 10px;
+    left: 8px;
+    padding: 6px 10px;
+    max-width: 80vw;
+    z-index: 101;
+  }
+  .buttonGroup {
+    position: fixed;
+    top: 52px;
+    right: 8px;
+    left: auto;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 102;
+  }
+  .sliderContainer {
+    position: fixed;
+    right: 8px;
+    left: 8px;
+    bottom: 8px;
+    top: auto;
+    width: auto;
+    max-width: 96vw;
+    height: 320px;
+    padding: 14px 8px;
+    background: #2f2f2f;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 10;
+    opacity: 0.95;
+  }
+  .sliderNumbers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 180px;
+    width: 44px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    gap: 8px;
+  }
+  .number {
+    min-width: 32px;
+    min-height: 24px;
+    font-size: 1rem;
+    scroll-snap-align: center;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .number.active {
+    color: #5ca6dc;
+    font-weight: bold;
+    transform: scale(1.4);
+  }
+  .slider {
+    writing-mode: bt-lr; /* vertical orientation */
+    -webkit-appearance: slider-vertical;
+    width: 36px;
+    height: 160px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background: #5ca6dc;
+    border-radius: 12px;
+  }
+  .slider::-webkit-slider-thumb {
+    width: 32px;
+    height: 32px;
+    margin-top: 0;
+  }
+  .slider::-moz-range-thumb {
+    width: 32px;
+    height: 32px;
+    margin-top: 0;
+  }
+

@@ -123,17 +123,7 @@ body {
   position: relative;
   width: 100%;
   height: 12px;
-  background: linear-gradient(90deg, 
-    #00ff88 0%, 
-    #00ff88 20%, 
-    #ffaa00 20%, 
-    #ffaa00 40%, 
-    #ff4444 40%, 
-    #ff4444 60%, 
-    #cc0000 60%, 
-    #cc0000 80%, 
-    #990000 80%, 
-    #990000 100%);
+  background-color: #5ca6dc;
   border-radius: 12px;
   outline: none;
   -webkit-appearance: none;
