@@ -88,7 +88,7 @@ const imagePrefix: Record<SceneKey, string> = {
       <div key={sceneKey} className="fullscreenImg">
         {sliderRange.map((val) => (
           <img
-            key={`${sceneKey}${val}`}  // ✅ This is now unique across scenes
+            key={`${sceneKey}${val}`}
             src={`/assets/${imagePrefix[sceneKey]}${val}.webp`}
             alt={`Myopia ${val}`}
             style={{
