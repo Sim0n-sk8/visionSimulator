@@ -13,6 +13,8 @@ type SceneKey = 's' | 'r' | 'p';
 
   const sliderRange = Array.from({ length: 11 }, (_, i) => i);
 
+
+  //Single color
   const getThumbColor = (value: number): string => {
   if (value <= 2) return '#ffffff';
   if (value <= 4) return '#ffffff';
