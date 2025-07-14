@@ -182,59 +182,94 @@ body {
 }
 
 
-@media only screen and (max-width: 900px) {
-
-  body{
+/* 900px to 700px — Fully Centered Layout */
+@media only screen and (max-width: 900px) and (min-width: 701px) {
+  body {
     display: flex;
     align-items: center;
-    justify-content: center;
+    
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     position: relative;
   }
 
+  .title {
+    position: relative;
+    top: 50;
+    left: 0;
+    transform: none;
+    z-index: 100;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: #2f2f2f;
+    padding: 12px 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+
+  .buttonGroup {
+    position: relative;
+    top: 50;
+    left: 0;
+    transform: none;
+    z-index: 100;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Under 700px — Top Left Layout, Reduced Button Padding */
+@media only screen and (max-width: 700px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 20px 10px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .title {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    z-index: 100;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: #2f2f2f;
+    padding: 10px 16px;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    opacity: 0.9;
+    margin-bottom: 16px;
+  }
+
+  .buttonGroup {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   button {
-  background: #2f2f2f;
-  border: 2px solid transparent;
-  border-radius: 20px;
-  color: #ffffff;
-  cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 10px 20px;
-  text-align: center;
-  transition: all 0.2s ease;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-  opacity: 0.8;
-  
+    /* smaller and tighter buttons */
+    font-size: 0.95rem;
+    
+  }
 }
 
-.buttonGroup {
-  top: 150px;
-  z-index: 100;
-  display: flex;
-  gap: 12px;
-  position: absolute;
-  top: 150;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-
-}
-
-.title {
-  position: absolute;
-  top: 100;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #ffffff;
-  background: #2f2f2f; /* rich dark grey */
-  padding: 12px 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(8px);
-  opacity: 0.8;
-}
-
-}
