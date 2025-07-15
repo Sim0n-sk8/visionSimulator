@@ -41,7 +41,11 @@ const imagePrefix: Record<SceneKey, string> = {
 
   return (
     <div>
-      <h1 className="title">MYOPIA VISION SIMULATOR</h1>
+      <div className="titleCon">
+        <h1 className="title">
+          <img src="/assets/logo.png" className="titleImg" alt="Logo" />
+        </h1>
+        </div>
 
       <div className="buttonGroup">
         <button

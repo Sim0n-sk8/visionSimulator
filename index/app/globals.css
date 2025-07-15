@@ -1,3 +1,16 @@
+:root {
+  --color-bg: #202427;
+  --color-surface: #2f2f2f;
+  --color-surface-alt: #323e47;
+  --color-button: #4f6270;
+  --color-button-hover: #151d24;
+  --color-accent: #5ca6dc;
+  --color-text: #ffffff;
+  --color-border-active: #ffffff22;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-shadow-heavy: rgba(0, 0, 0, 0.6);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,21 +34,39 @@
   display: block;
 }
 
-/* Title aligned top-left */
-.title {
+
+.titleCon {
   position: fixed;
   top: 20px;
   left: 30px;
-  z-index: 100;
+  z-index: 110;
+  background: var(--color-surface-alt);
+  border-radius: 24px;
+  width: 15%;
+  padding: 11px 11px;
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+
+.title {
+  
+  position: relative;
   font-size: 2rem;
   font-weight: 700;
-  color: #ffffff;
-  background: #2f2f2f; /* rich dark grey */
+  background: var(--color-button);
   padding: 12px 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(8px);
-  opacity: 0.8;
+  border-radius: 20px;
+  width: 100%;
+
+  box-sizing: border-box;
 }
+
+.titleImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 /* Button group aligned top-right */
 .buttonGroup {
@@ -45,14 +76,19 @@
   z-index: 100;
   display: flex;
   gap: 12px;
+  background-color: var(--color-surface-alt);
+  padding: 12px;
+  border-radius: 50px;
+  box-shadow: 0 3px 8px var(--color-shadow);
+  transition: transform 0.1s ease-in-out;
 }
 
 /* Button base style */
 button {
-  background: #2f2f2f;
+  background: var(--color-button);
   border: 2px solid transparent;
   border-radius: 20px;
-  color: #ffffff;
+  color: var(--color-text);
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -60,30 +96,39 @@ button {
   padding: 10px 20px;
   text-align: center;
   transition: all 0.2s ease;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-  
+  box-shadow: 0 3px 8px var(--color-shadow);
   opacity: 0.8;
 }
 
-/* Hover effect: turns black */
+/* Hover effect: turns darker */
 button:hover {
-  background: #000000;
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  background: var(--color-button-hover);
+  transform: scale(1.10);
+  box-shadow: 0 6px 12px var(--color-shadow-heavy);
 }
 
 /* Active or selected state */
 button:active,
 button.active {
-  background: #000000;
-  border: 2px solid #ffffff22;
-  color: #fff;
+  background: var(--color-button-hover);
+  border: 2px solid var(--color-border-active);
+  color: var(--color-text);
   transform: scale(1);
+}
+
+/* Hover effect: shrink a bit */
+.buttonGroup:hover {
+  transform: scale(0.98);
+}
+
+/* Active or clicked effect: shrink a bit more */
+.buttonGroup:active {
+  transform: scale(0.98);
 }
 
 /* Optional: body background */
 body {
-  background-color: #1f1f1f;
+  background-color: var(--color-bg);
 }
 
 /* Desktop Styles */
@@ -93,8 +138,8 @@ body {
   right: 30px;
   width: 400px;
   z-index: 10;
-  background: #2f2f2f;
-  opacity: 0.8;
+  background: var(--color-surface-alt);
+
   border-radius: 20px;
   padding: 30px;
 }
@@ -108,7 +153,7 @@ body {
 .number {
   font-size: 14px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--color-text);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   transition: all 0.3s ease;
   min-width: 25px;
@@ -123,12 +168,12 @@ body {
   position: relative;
   width: 100%;
   height: 12px;
-  background-color: #5ca6dc;
+  background-color: var(--color-accent);
   border-radius: 12px;
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 2px 4px var(--color-shadow);
 }
 
 .slider::-webkit-slider-runnable-track {
@@ -151,43 +196,41 @@ body {
   appearance: none;
   width: 32px;
   height: 32px;
-  background: var(--thumb-color, linear-gradient(45deg, #ffffff, #f0f0f0));
+  background: var(--thumb-color, linear-gradient(45deg, var(--color-text), #f0f0f0));
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px var(--color-shadow), 0 0 0 2px rgba(255, 255, 255, 0.3);
   transition: all 0.2s ease;
   margin-top: -10px; /* Centers the thumb vertically */
 }
 
 .slider::-webkit-slider-thumb:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 20px var(--color-shadow-heavy), 0 0 0 3px rgba(255, 255, 255, 0.4);
 }
 
 .slider::-moz-range-thumb {
   width: 32px;
   height: 32px;
-  background: var(--thumb-color, linear-gradient(45deg, #ffffff, #f0f0f0));
+  background: var(--thumb-color, linear-gradient(45deg, var(--color-text), #f0f0f0));
   border-radius: 50%;
   cursor: pointer;
   border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px var(--color-shadow), 0 0 0 2px rgba(255, 255, 255, 0.3);
   transition: all 0.2s ease;
   margin-top: -10px; /* Centers the thumb vertically */
 }
 
 .slider::-moz-range-thumb:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 20px var(--color-shadow-heavy), 0 0 0 3px rgba(255, 255, 255, 0.4);
 }
-
 
 /* 900px to 700px — Fully Centered Layout */
 @media only screen and (max-width: 900px) and (min-width: 701px) {
   body {
     display: flex;
     align-items: center;
-    
     flex-direction: column;
     height: 100vh;
     margin: 0;
@@ -203,8 +246,8 @@ body {
     z-index: 100;
     font-size: 1rem;
     font-weight: 500;
-    color: #ffffff;
-    background: #2f2f2f;
+    color: var(--color-text);
+    background: var(--color-bg);
     padding: 12px 20px;
     border-radius: 12px;
     backdrop-filter: blur(8px);
@@ -238,38 +281,70 @@ body {
     box-sizing: border-box;
   }
 
+  .titleCon {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  z-index: 110;
+  background: var(--color-surface-alt);
+  border-radius: 24px;
+  width: 170px;
+  padding: 11px 11px;
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+
   .title {
     position: relative;
     top: 0;
     left: 0;
-    transform: none;
-    z-index: 100;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #ffffff;
-    background: #2f2f2f;
-    padding: 10px 16px;
-    border-radius: 10px;
-    backdrop-filter: blur(8px);
-    opacity: 0.9;
-    margin-bottom: 16px;
+    border-radius: 17px;
+    padding: 5px;
+    
+  }
+
+  .titleImg {
+    width: 100%;
+    height: auto;
   }
 
   .buttonGroup {
-    position: relative;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: 10;
+    left: 250px;
     transform: none;
     z-index: 100;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 120px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    
   }
 
   button {
-    /* smaller and tighter buttons */
-    font-size: 0.95rem;
-    
+    font-size: 0.60rem;
+    width: 100px;
+
+  }
+
+  /* ==== SLIDER CONTAINER ==== */
+  .sliderContainer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    background: var(--color-surface-alt);
+   
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    margin-bottom: 20px;
   }
 }
-
