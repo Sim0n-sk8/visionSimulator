@@ -116,10 +116,6 @@ button.active {
   transform: scale(1);
 }
 
-/* Hover effect: shrink a bit */
-.buttonGroup:hover {
-  transform: scale(0.98);
-}
 
 /* Active or clicked effect: shrink a bit more */
 .buttonGroup:active {
