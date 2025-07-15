@@ -2,6 +2,7 @@
   --color-bg: #202427;
   --color-surface: #2f2f2f;
   --color-surface-alt: #323e47;
+  --color-surface-alt-2: #37444d;
   --color-button: #4f6270;
   --color-button-hover: #151d24;
   --color-accent: #5ca6dc;
@@ -53,11 +54,11 @@
   position: relative;
   font-size: 2rem;
   font-weight: 700;
-  background: var(--color-button);
+  background: var(--color-surface-alt-2);
   padding: 12px 20px;
   border-radius: 20px;
   width: 100%;
-
+  box-shadow: 0 10px 20px var(--color-shadow);
   box-sizing: border-box;
 }
 
@@ -135,9 +136,13 @@ body {
   width: 400px;
   z-index: 10;
   background: var(--color-surface-alt);
-
   border-radius: 20px;
   padding: 30px;
+  transition: all 0.2s ease;
+}
+
+.sliderContainer:hover{
+  transform: scale(1.03);
 }
 
 .sliderNumbers {
@@ -150,14 +155,14 @@ body {
   font-size: 14px;
   font-weight: bold;
   color: var(--color-text);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  
   transition: all 0.3s ease;
   min-width: 25px;
   text-align: center;
 }
 
 .number.active {
-  transform: scale(1.5);
+  transform: scale(1.7);
 }
 
 .slider {
