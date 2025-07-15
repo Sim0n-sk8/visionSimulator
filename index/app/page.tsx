@@ -39,6 +39,12 @@ const imagePrefix: Record<SceneKey, string> = {
 };
 
 
+
+
+
+
+
+
   return (
     <div>
       <div className="titleCon">
@@ -66,6 +72,12 @@ const imagePrefix: Record<SceneKey, string> = {
         >
           Playground
         </button>
+      </div>
+
+      <div >
+       <p className="risk">
+          Myopia Risk Level: {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}
+      </p>
       </div>
 
       <div className="sliderContainer">

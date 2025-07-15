@@ -128,6 +128,24 @@ body {
   background-color: var(--color-bg);
 }
 
+
+.risk{
+  position: relative;
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--color-surface-alt-2);
+  padding: 12px 20px;
+  border-radius: 20px;
+  width: 250px;
+  box-shadow: 0 10px 20px var(--color-shadow);
+  box-sizing: border-box;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+}
+
 /* Desktop Styles */
 .sliderContainer {
   position: fixed;
@@ -138,12 +156,9 @@ body {
   background: var(--color-surface-alt);
   border-radius: 20px;
   padding: 30px;
-  transition: all 0.2s ease;
+  
 }
 
-.sliderContainer:hover{
-  transform: scale(1.03);
-}
 
 .sliderNumbers {
   display: flex;
@@ -290,6 +305,7 @@ body {
     padding: 20px 10px;
     margin: 0;
     box-sizing: border-box;
+    
   }
 
   .titleCon {
@@ -351,11 +367,12 @@ body {
     max-width: 400px;
     padding: 20px;
     background: var(--color-surface-alt);
-   
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     z-index: 10;
     margin-bottom: 20px;
   }
+
+
 }
