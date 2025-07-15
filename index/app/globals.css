@@ -169,7 +169,17 @@ body {
   position: relative;
   width: 100%;
   height: 12px;
-  background-color: var(--color-accent);
+  background: linear-gradient(90deg, 
+    #5ca6dc 0%, 
+    #5ca6dc 20%, 
+    #7cc7fd 20%, 
+    #7cc7fd 40%, 
+    #5ca6dc 40%, 
+    #5ca6dc 60%, 
+    #7cc7fd 60%, 
+    #7cc7fd 80%, 
+    #5ca6dc 80%, 
+    #5ca6dc 100%);
   border-radius: 12px;
   outline: none;
   -webkit-appearance: none;
