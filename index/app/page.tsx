@@ -47,11 +47,11 @@ const imagePrefix: Record<SceneKey, string> = {
 
   return (
     <div>
-      <div className="titleCon">
+      
         <h1 className="title">
           <img src="/assets/logo.png" className="titleImg" alt="Logo" />
         </h1>
-        </div>
+        
 
       <div className="buttonGroup">
         <button
@@ -74,13 +74,14 @@ const imagePrefix: Record<SceneKey, string> = {
         </button>
       </div>
 
-      <div >
+      <div className= "riskContainer">
        <p className="risk">
           Myopia Risk Level: {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}
       </p>
       </div>
 
-      <div className="sliderContainer">
+      <div className="slideCon">
+        <div className="sliderContainer">
         <div className="sliderNumbers">
           {sliderRange.map((num) => (
             <span
@@ -91,7 +92,7 @@ const imagePrefix: Record<SceneKey, string> = {
             </span>
           ))}
         </div>
-
+         
         <input
           type="range"
           className="slider"
@@ -100,8 +101,11 @@ const imagePrefix: Record<SceneKey, string> = {
           value={sliderValue}
           onChange={(e) => setSliderValue(parseInt(e.target.value))}
         />
+        
       </div>
-
+      
+      </div> 
+    
     {(['s', 'r', 'p'] as SceneKey[]).map((sceneKey) => (
       <div key={sceneKey} className="fullscreenImg">
         {sliderRange.map((val) => (
@@ -116,6 +120,7 @@ const imagePrefix: Record<SceneKey, string> = {
           />
         ))}
       </div>
+      
     ))}
 
     </div>
