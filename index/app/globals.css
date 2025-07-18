@@ -35,7 +35,7 @@
   display: block;
 }
 
-
+/*
 .title {
   position: fixed;
   top: 20px;
@@ -55,9 +55,9 @@
   height: auto;
   display: block;
 }
+*/
 
 
-/* Button group aligned top-right */
 .buttonGroup {
   position: fixed;
   top: 20px;
@@ -155,7 +155,7 @@ body {
   right: 30px;
   z-index: 100;
   display: flex;
-  flex-direction: column; /* stack vertically */
+  flex-direction: column;
   align-items: center;
   background-color: var(--color-surface-alt);
   padding: 12px;
@@ -270,31 +270,31 @@ body {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 550px) {
   body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
     display: block;
   }
-
+/*
   .title {
     position: fixed;
     top: 20px;
     left: 20px;
-    width: 140px;
+    width: 5rem;
     padding: 8px;
     z-index: 110;
-    background: var(--color-surface-alt);
+    backdrop-filter: blur(10px);
     border-radius: 16px;
     font-size: 0.9rem;
-  }
+  }*/
 
   .buttonGroup {
     position: fixed;
     top: 20px;
     right: 20px;
-    flex-direction: row; /* KEEP in a row */
+    flex-direction: row;
     gap: 8px;
     padding: 8px 12px;
     width: auto;
@@ -303,7 +303,7 @@ body {
   }
 
   .buttonGroup button {
-    font-size: 0.75rem;
+    font-size: 0.60rem;
     padding: 6px 12px;
     width: auto;
   }
@@ -331,7 +331,7 @@ body {
   }
 
 .riskContainer {
-  width: 35%;
+  width: fit-content;
   padding: 8px;
   border-radius: 14px;
   background: var(--color-surface-alt);
@@ -351,6 +351,49 @@ body {
 }
 
 }
-/*hello*/
-/*hello*/
+
+@media (max-width: 400px) {
+  
+  body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+/*
+  .title{
+    width: 0;
+    height: 0;
+    backdrop-filter: blur(0px);
+  }*/
+
+  .buttonGroup button {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    width: auto;
+  }
+  .buttonGroup{
+    position: absolute;
+
+  }
+
+
+.number {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  min-width: 25px;
+  text-align: center;
+}
+
+.number.active {
+  transform: scale(1.5);
+}
+ 
+.sliderNumbers{
+  justify-content: left;
+}
+  
+}
+
 
