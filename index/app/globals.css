@@ -389,11 +389,34 @@ body {
 .number.active {
   transform: scale(1.5);
 }
- 
-.sliderNumbers{
-  justify-content: left;
+   
 }
-  
+
+@media (max-width: 350px) {
+
+  .sliderContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sliderNumbers {
+    justify-content: space-between;
+    gap: 2px;
+    transform: scale(0.90);
+    align-items: center;
+  }
+
+  .number {
+    font-size: 0.65rem;
+    min-width: 20px;
+  }
 }
 
 
+
+/*
+To do:
+320px~ numbers go off screen
+375px~ center buttons
+425px ~ center buttons
+*/
