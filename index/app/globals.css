@@ -124,7 +124,7 @@ body {
   background: var(--color-button);
   padding: 12px 20px;
   border-radius: 10px;
-  width: 170px;
+  width: 200px;
   box-shadow: 0 10px 20px var(--color-shadow);
   box-sizing: border-box;
   z-index: 1000;
@@ -137,7 +137,7 @@ body {
 .riskContainer{
  position: fixed;
   bottom: 150px;
-  right: 150px;
+  right: 220px;
   z-index: 100;
   display: flex;
   gap: 12px;
@@ -159,16 +159,15 @@ body {
   align-items: center;
   background-color: var(--color-surface-alt);
   padding: 12px;
-  border-radius: 25px;
+  border-radius: 20px;
   
 }
 
 .sliderContainer {
   position: relative;
   width: 390px;
-  
   background: var(--color-button);
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -415,9 +414,4 @@ body {
 
 
 
-/*
-To do:
-320px~ numbers go off screen
-375px~ center buttons
-425px ~ center buttons
-*/
+

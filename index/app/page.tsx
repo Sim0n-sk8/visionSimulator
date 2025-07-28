@@ -6,27 +6,9 @@ const MyopiaSimulator = () => {
 
 type SceneKey = 's' | 'r' | 'p';
 
-
-
   const [currentScene, setCurrentScene] = useState<SceneKey>('s');
   const [sliderValue, setSliderValue] = useState(0);
-
   const sliderRange = Array.from({ length: 11 }, (_, i) => i);
-
-
-  
-  const getThumbColor = (value: number): string => {
-  if (value <= 2) return '#ffffff';
-  if (value <= 4) return '#ffffff';
-  if (value <= 6) return '#ffffff';
-  if (value <= 8) return '#ffffff';
-  return '#ffffff';
-};
-
-
-  useEffect(() => {
-    document.documentElement.style.setProperty('--thumb-color', getThumbColor(sliderValue));
-  }, [sliderValue]);
 
 const handleSceneChange = (scene: 's' | 'r' | 'p') => {
     setCurrentScene(scene);
@@ -38,8 +20,6 @@ const imagePrefix: Record<SceneKey, string> = {
   p: 'play',
 };
 
-
- 
   return (
     <div>
       
@@ -71,12 +51,13 @@ const imagePrefix: Record<SceneKey, string> = {
 
       <div className= "riskContainer">
        <p className="risk">
-          Myopia Risk Level: {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}
+          Myopia Risk Level: {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
       </p>
       </div>
 
       <div className="slideCon">
         <div className="sliderContainer">
+          <p>Slide to emulate</p>
         <div className="sliderNumbers">
           {sliderRange.map((num) => (
             <span
