@@ -39,12 +39,7 @@ const imagePrefix: Record<SceneKey, string> = {
 };
 
 
-
-
-
-
-
-
+ 
   return (
     <div>
       

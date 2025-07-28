@@ -119,12 +119,12 @@ body {
 
 .risk{
   position: relative;
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 700;
   background: var(--color-button);
   padding: 12px 20px;
   border-radius: 10px;
-  width: 250px;
+  width: 170px;
   box-shadow: 0 10px 20px var(--color-shadow);
   box-sizing: border-box;
   z-index: 1000;
@@ -165,10 +165,11 @@ body {
 
 .sliderContainer {
   position: relative;
-  width: 400px;
+  width: 390px;
+  
   background: var(--color-button);
   border-radius: 20px;
-  padding: 25px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 3px 8px var(--color-shadow);
@@ -189,7 +190,7 @@ body {
   color: var(--color-text);
   
   transition: all 0.3s ease;
-  min-width: 25px;
+  min-width: 20px;
   text-align: center;
 }
 
