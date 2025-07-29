@@ -136,7 +136,7 @@ body {
 
 .riskContainer{
  position: fixed;
-  bottom: 170px;
+  bottom: 140px;
   right: 220px;
   z-index: 100;
   display: flex;
@@ -175,6 +175,7 @@ body {
   background: var(--color-button);
   border-radius: 15px;
   padding: 15px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 3px 8px var(--color-shadow);

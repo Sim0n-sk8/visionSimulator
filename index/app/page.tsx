@@ -57,7 +57,6 @@ const imagePrefix: Record<SceneKey, string> = {
 
       <div className="slideCon">
         <div className="sliderContainer">
-          <p className ="sliderWord">Move the slider to see changes in vision</p>
         <div className="sliderNumbers">
           {sliderRange.map((num) => (
             <span
