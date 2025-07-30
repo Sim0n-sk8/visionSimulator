@@ -8,6 +8,9 @@ type SceneKey = 's' | 'r' | 'p';
 
   const [currentScene, setCurrentScene] = useState<SceneKey>('s');
   const [sliderValue, setSliderValue] = useState(0);
+  const [showHint, setShowHint] = useState(true);
+
+
   const sliderRange = Array.from({ length: 11 }, (_, i) => i);
 
 const handleSceneChange = (scene: 's' | 'r' | 'p') => {
@@ -56,31 +59,42 @@ const imagePrefix: Record<SceneKey, string> = {
       </div>
 
       <div className="slideCon">
-        <div className="sliderContainer">
-        <div className="sliderNumbers">
-          {sliderRange.map((num) => (
-            <span
-              key={num}
-              className={`number ${sliderValue === num ? 'active' : ''}`}
-            >
-              {-num}
-            </span>
-          ))}
-        </div>
-         
-        <input
-          type="range"
-          className="slider"
-          min="0"
-          max="10"
-          value={sliderValue}
-          onChange={(e) => setSliderValue(parseInt(e.target.value))}
-        />
-        
-      </div>
-      
-      </div> 
+  <div className="sliderContainer">
     
+   
+    {showHint && (
+      <div className="sliderHint">
+        Slide to start simulating
+      </div>
+    )}
+
+    <div className="sliderNumbers">
+      {sliderRange.map((num) => (
+        <span
+          key={num}
+          className={`number ${sliderValue === num ? 'active' : ''}`}
+        >
+          {-num}
+        </span>
+      ))}
+    </div>
+
+    <input
+      type="range"
+      className="slider"
+      min="0"
+      max="10"
+      value={sliderValue}
+      onChange={(e) => {
+        setSliderValue(parseInt(e.target.value));
+        if (showHint) {
+          setShowHint(false);
+        }
+      }}
+    />
+  </div>
+</div>
+
     {(['s', 'r', 'p'] as SceneKey[]).map((sceneKey) => (
       <div key={sceneKey} className="fullscreenImg">
         {sliderRange.map((val) => (
