@@ -303,16 +303,14 @@ body {
   opacity: 0;
 }
 
-@media (max-width: 550px) {
-
-
-
-
+@media (max-width: 425px) {
 body {
 padding: 0;
 margin: 0;
+overflow: hidden;
 
 }
+
 
 
 
@@ -351,7 +349,7 @@ width: auto;
 .slideCon {
 position: fixed;
 bottom: 30%;
-left: 20%;
+left: 70%;
 transform: translateY(50%);
 z-index: 100;
 display: flex;
@@ -362,9 +360,9 @@ width: fit-content;
 }
 
 .sliderContainer {
-  width: 100px; /* shrink to content size */
+  width: 100px; 
   height: 400px;
-  padding: 10px;       /* reduce padding */
+  padding: 10px;
   margin: 0;
   border-radius: 16px;
   background: var(--color-button);
@@ -373,7 +371,7 @@ width: fit-content;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 8px;             /* tighter spacing between labels and slider */
+  gap: 8px;
   overflow: visible;
   
 }
@@ -409,14 +407,14 @@ width: fit-content;
 
 
 .sliderNumbers {
-display: flex;
-flex-direction: column-reverse;
-justify-content: space-between;
-margin-bottom: 0;
-margin-right: 0;
-height: 360px;
-
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  height: 360px;
+  margin: 0;
+  transform: translateX(155px); /* 👈 shifts numbers left */
 }
+
 
 
 
@@ -449,140 +447,32 @@ box-shadow: 0 3px 6px var(--color-shadow);
 
 }
 
-@media (max-width: 500px) {
-body{
-display:flex;
-justify-content: center;
-align-items: center;
-}
-/*
-.title{
-width: 0;
-height: 0;
-backdrop-filter: blur(0px);
-}*/
-
-.buttonGroup button {
-font-size: 0.75rem;
-padding: 6px 12px;
-width: auto;
-}
-.buttonGroup{
-position: absolute;
-}
-
-.number {
-font-size: 0.75rem;
-font-weight: bold;
-color: var(--color-text);
-transition: all 0.3s ease;
-min-width: 25px;
-text-align: center;
-}
-
-.number.active {
-transform: scale(1.5);
-}
-}
-
-@media (max-width: 350px) {
-
-.sliderContainer{
+@media (max-width: 380px){
+.slideCon {
+position: fixed;
+bottom: 30%;
+left: 68%;
+transform: translateY(50%);
+z-index: 100;
 display: flex;
-flex-direction: row;
-justify-content: center;
+flex-direction: column;
 align-items: center;
-width: 100px;
-gap: 10px;
+gap: 15px;
+width: fit-content;
 }
-.sliderNumbers {
-flex-direction: column-reverse;
-justify-content: space-between;
-gap: 2px;
-transform: scale(0.90);
+}
+
+@media (max-width: 350px){
+.slideCon {
+position: fixed;
+bottom: 30%;
+left: 65%;
+transform: translateY(50%);
+z-index: 100;
+display: flex;
+flex-direction: column;
 align-items: center;
-height: 320px;
-margin-right: 0;
+gap: 15px;
+width: fit-content;
 }
-
-.slider {
-appearance: slider-vertical;
-width: 12px;
-height: 320px;
-background: transparent;
-border-radius: 12px;
-outline: none;
-}
-
-.slider::-webkit-slider-runnable-track {
-width: 12px;
-height: 320px;
-background: linear-gradient(0deg, 
-#5ca6dc 0%, 
-#5ca6dc 20%, 
-#7cc7fd 20%, 
-#7cc7fd 40%, 
-#5ca6dc 40%, 
-#5ca6dc 60%, 
-#7cc7fd 60%, 
-#7cc7fd 80%, 
-#5ca6dc 80%, 
-#5ca6dc 100%);
-border-radius: 12px;
-box-shadow: inset 0 2px 4px var(--color-shadow);
-}
-
-.slider::-moz-range-track {
-width: 12px;
-height: 320px;
-background: linear-gradient(0deg, 
-#5ca6dc 0%, 
-#5ca6dc 20%, 
-#7cc7fd 20%, 
-#7cc7fd 40%, 
-#5ca6dc 40%, 
-#5ca6dc 60%, 
-#7cc7fd 60%, 
-#7cc7fd 80%, 
-#5ca6dc 80%, 
-#5ca6dc 100%);
-border-radius: 12px;
-border: none;
-box-shadow: inset 0 2px 4px var(--color-shadow);
-}
-
-.number {
-font-size: 0.65rem;
-min-width: 20px;
-}
-}
-
-@media (max-width: 550px) {
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    width: 32px !important;
-    height: 32px !important;
-    background: #fff !important;
-    border: none !important;
-    border-radius: 50% !important;
-    cursor: pointer !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 0 2px rgba(255,255,255,0.3) !important;
-    transition: all 0.2s ease !important;
-    margin-top: -10px !important;
-    margin-left: 0 !important;
-  }
-
-  .slider::-moz-range-thumb {
-    width: 32px !important;
-    height: 32px !important;
-    background: #fff !important;
-    border: none !important;
-    border-radius: 50% !important;
-    cursor: pointer !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 0 2px rgba(255,255,255,0.3) !important;
-    transition: all 0.2s ease !important;
-    margin-top: -10px !important;
-    margin-left: 0 !important;
-  }
 }
