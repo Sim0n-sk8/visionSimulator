@@ -261,9 +261,9 @@ body {
 
 .sliderHint {
   position: absolute;
-  bottom: 75%;
-  left: -50;
-  transform: translateY(-10px);
+  bottom: 75%!important;
+  left: -50 !important;
+  transform: translateY(-10px)!important;
   background-color: var(--color-surface-alt-2);
   color: white;
   padding: 10px 16px;
