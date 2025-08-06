@@ -470,8 +470,8 @@ body {
   }
 }
 
-@media (max-height:670px){
-  .slideCon{
+@media (max-height: 670px) and (max-width: 480px) {
+  .slideCon {
     bottom: 220px !important;
   }
 }
