@@ -283,6 +283,16 @@ body {
   opacity: 0;
 }
 
+
+
+
+
+
+
+
+
+
+/* Responsive Styles */
 @media (max-width: 480px) {
   body {
     padding: 0 !important;
@@ -329,7 +339,7 @@ body {
   }
 
   .sliderContainer {
-    width: 100px !important;
+    width: 80px !important;
     height: 400px !important;
     padding: 10px !important;
     margin: 0 !important;
@@ -340,7 +350,7 @@ body {
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 2px !important;
     overflow: visible !important;
   }
 
@@ -372,9 +382,9 @@ body {
     display: flex !important;
     flex-direction: column-reverse !important;
     justify-content: space-between !important;
-    height: 360px !important;
+    height: 355px !important;
     margin: 0 !important;
-    transform: translateX(155px) !important;
+    transform: translateX(160px) !important;
   }
 
   .riskContainer {
