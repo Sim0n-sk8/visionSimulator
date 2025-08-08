@@ -29,7 +29,7 @@ const MyopiaSimulator = () => {
   // Looks for screen width to handle scene chang from desktop to mobile
   useEffect(() => {
     const handleResize = () => {
-      const tablet = window.innerWidth <= 770;
+      const tablet = window.innerWidth <= 800;
       setIsTablet(tablet);
 
       setCurrentScene((prev) => {
@@ -96,7 +96,17 @@ const MyopiaSimulator = () => {
             }`}
             onClick={() => handleSceneChange('s')}
           >
-            Classroom
+            School
+          </button>
+
+             {/* Playground */}
+          <button
+            className={`playBtn ${
+              currentScene === (isTablet ? 'd' : 'p') ? 'active' : ''
+            }`}
+            onClick={() => handleSceneChange('p')}
+          >
+            Sport
           </button>
 
           {/* Road */}
@@ -106,18 +116,10 @@ const MyopiaSimulator = () => {
             }`}
             onClick={() => handleSceneChange('r')}
           >
-            Road
+            Street
           </button>
 
-          {/* Playground */}
-          <button
-            className={`playBtn ${
-              currentScene === (isTablet ? 'd' : 'p') ? 'active' : ''
-            }`}
-            onClick={() => handleSceneChange('p')}
-          >
-            Playground
-          </button>
+         
         </div>
 
         {/* Myopia risk level display */}
@@ -165,7 +167,7 @@ const MyopiaSimulator = () => {
         {/* Loops through all scene keys and slider values, showing only
             the currently active scene and slider value image */}
 
-            
+
         {(['s', 'r', 'p', 'a', 'b', 'd'] as SceneKey[]).map((sceneKey) => (
           <div key={sceneKey} className="fullscreenImg">
             {sliderRange.map((val) => (
@@ -187,3 +189,10 @@ const MyopiaSimulator = () => {
 };
 
 export default MyopiaSimulator;
+
+
+
+/*To do-
+  Hint to center of screen :" Use the slider to show diffrent amounts of blur caused by myopia"
+  Mobile slider to be smaller
+*/
