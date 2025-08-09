@@ -86,6 +86,10 @@ const MyopiaSimulator = () => {
           <img src="/assets/logo.png" className="titleImg" alt="Logo" />
         </h1>
 
+
+        {/* Hint text shown initially */}
+            {showHint && <div className="sliderHint">Use the slider to show diffrent amounts of blur caused by myopia</div>}
+
         {/* Scene selection buttons */}
         <div className="buttonGroup">
 
@@ -133,8 +137,7 @@ const MyopiaSimulator = () => {
         <div className="slideCon">
           <div className="sliderContainer">
 
-            {/* Hint text shown initially */}
-            {showHint && <div className="sliderHint">Slide to start simulating</div>}
+            
 
             {/* Slider numbers above the slider */}
             <div className="sliderNumbers">
