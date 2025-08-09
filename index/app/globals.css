@@ -262,23 +262,30 @@ body {
 
 .sliderHint {
   position: absolute !important;
-  top: 50%!important;
+  top: 50% !important;
   left: 50% !important;
-  transform: translate(-50px,-50px)!important;
-  background-color: var(--color-hint);
+  transform: translate(-50%, -50%) !important;
+  background: linear-gradient(135deg, #104a79, #0657d1);
+  opacity:0.8;
   color: white;
-  padding: 10px 16px;
-  border-radius: 12px;
-  font-size: 0.85rem;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 1.4rem;
   font-weight: 600;
-  opacity: 1;
+  letter-spacing: 0.5px;
   transition: opacity 7s ease-out;
-  pointer-events: none;
+  
   z-index: 10;
-  box-shadow: 0 4px 12px var(--color-shadow);
-  max-width: 200px;
-  line-height: 1.3 !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  text-align: center;
+  line-height: 1.4;
+  
 }
+
+
+
+
 
 .sliderHint.fadeOut {
   opacity: 0;
