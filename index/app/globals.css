@@ -419,6 +419,11 @@ body {
     border-radius: 8px;
     padding: 5px;
   }
+
+  .sliderHint{
+    font-size: small;
+    
+  }
 }
 
 @media (max-width: 380px){
@@ -441,6 +446,8 @@ body {
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
+
+  
 }
 
 @media (max-width: 350px){
@@ -492,3 +499,4 @@ body {
     bottom: 220px !important;
   }
 }
+
