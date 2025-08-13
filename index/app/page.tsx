@@ -88,7 +88,7 @@ const MyopiaSimulator = () => {
 
 
         {/* Hint text shown initially */}
-            {showHint && <div className="sliderHint">Use the slider to show diffrent amounts of blur caused by myopia</div>}
+            {showHint && <div className="sliderHint">Use the slider to show different amounts of blur caused by myopia</div>}
 
         {/* Scene selection buttons */}
         <div className="buttonGroup">
