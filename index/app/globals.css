@@ -258,7 +258,7 @@ body {
 }
 
 
-
+/*Hint*/
 .sliderHint {
   position: absolute !important;
   top: 50% !important;
@@ -281,10 +281,6 @@ body {
   line-height: 1.4;
   
 }
-
-
-
-
 
 .sliderHint.fadeOut {
   opacity: 0;
@@ -333,9 +329,9 @@ body {
   }
 
   .slideCon {
-    position: fixed !important;
+    position: absolute !important;
     bottom: 30% !important;
-    left: 70% !important;
+    left: 78% !important;
     transform: translateY(50%) !important;
     z-index: 100 !important;
     display: flex !important;
@@ -347,7 +343,7 @@ body {
 
   .sliderContainer {
     width: 80px !important;
-    height: 400px !important;
+    height: 380px !important;
     padding: 10px !important;
     margin: 0 !important;
     border-radius: 16px !important;
@@ -420,11 +416,19 @@ body {
     padding: 5px;
   }
 
-  .sliderHint{
-    font-size: small;
+.sliderHint {
+    position: absolute !important;
+    left: 35% !important;
+    top: 60% !important;
+    font-size: 1.7rem !important;
+    width: 280px !important;
+    pointer-events: none !important;
+    z-index: 10 !important;
+    
     
   }
 }
+
 
 @media (max-width: 380px){
   .slideCon {
@@ -500,3 +504,7 @@ body {
   }
 }
 
+
+
+
+/*To change the greys to the blue gradient like the hint*/
