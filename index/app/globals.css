@@ -128,7 +128,7 @@ body {
 
 .risk {
   position: relative;
-  font-size: 0.75rem;
+  font-size: 0.80rem;
   font-weight: 700;
   
   /* Glass morphism effect */
@@ -140,9 +140,9 @@ body {
     var(--glass-shadow),
     inset 1px 1px 1px rgba(255, 255, 255, 0.1);
     
-  padding: 12px 20px;
+  padding: 12px 15px;
   border-radius: 10px;
-  width: 200px;
+  width: 210px;
   box-sizing: border-box;
   z-index: 1000;
   align-items: center;
@@ -153,8 +153,8 @@ body {
 
 .riskContainer {
   position: fixed;
-  bottom: 140px;
-  right: 220px;
+  bottom: 130px;
+  right: 210px;
   z-index: 100;
   display: flex;
   gap: 12px;
