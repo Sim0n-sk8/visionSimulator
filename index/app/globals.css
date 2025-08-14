@@ -197,7 +197,7 @@ body {
   box-shadow: 
     var(--glass-shadow),
     inset 1px 1px 1px var(--glass-highlight);
-  filter: url(#glass-distortion) saturate(120%) brightness(1.15);
+  /*filter: url(#glass-distortion) saturate(120%) brightness(1.15);*/
   padding: 5px;
   border-radius: 20px;
 }
@@ -292,8 +292,8 @@ body {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   
   /* Glass morphism effect for slider thumb */
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
@@ -307,7 +307,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-top: -10px;
+  margin-top: -8px;
 }
 
 .slider::-webkit-slider-thumb:hover {
@@ -432,8 +432,8 @@ body {
   }
 
   .sliderContainer {
-    width: 80px !important;
-    height: 380px !important;
+    width: 70px !important;
+    height: 360px !important;
     padding: 10px !important;
     margin: 0 !important;
     border-radius: 16px !important;
@@ -449,7 +449,7 @@ body {
   .slider {
     transform: rotate(-90deg) !important;
     transform-origin: center !important;
-    width: 360px !important;
+    width: 340px !important;
     height: 12px !important;
     background: linear-gradient(to right, 
       #5ca6dc 0%, 
@@ -464,7 +464,7 @@ body {
       #5ca6dc 100%);
     border-radius: 12px;
     outline: none;
-    margin: 0;
+    margin: 5;
     appearance: none;
     box-shadow: inset 0 2px 4px var(--color-shadow);
     flex-shrink: 0 !important;
@@ -474,7 +474,7 @@ body {
     display: flex !important;
     flex-direction: column-reverse !important;
     justify-content: space-between !important;
-    height: 355px !important;
+    height: 335px !important;
     margin: 0 !important;
     transform: translateX(160px) !important;
   }
@@ -503,14 +503,14 @@ body {
     border-radius: 8px;
     padding: 5px;
   }
-
+/*MOBILE HINT*/
   .sliderHint {
     position: fixed !important;
     bottom: 15% !important;
     left: 40% !important;
     height: fit-content;
     font-size: 1rem !important;
-    width: 50% !important;
+    width: 55% !important;
     text-align: center !important;
     color: #fff !important;
     border-radius: 10px !important;
