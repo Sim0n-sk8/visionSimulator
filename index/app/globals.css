@@ -13,7 +13,6 @@
   --color-hint: #0371c0;
   --color-gradient-hint: linear-gradient(135deg,#104a79, #0657d1ab) !important;
   
-  
   /* Glass morphism variables */
   --glass-bg: rgba(92, 166, 220, 0.5);
   --glass-highlight: rgba(255, 255, 255, 0.25);
@@ -21,7 +20,69 @@
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
+/* Spotlight Card Styles */
+.card-spotlight {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y), 
+    var(--spotlight-color), 
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-spotlight:hover::before,
+.card-spotlight:focus-within::before {
+  opacity: 1;
+}
+
+/* Spotlight positioning for specific elements */
+.buttonSpotlight {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 100;
+}
+
+.sliderSpotlight {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 100;
+}
+
+.riskSpotlight {
+  position: fixed;
+  bottom: 130px;
+  right: 210px;
+  z-index: 100;
+}
+
+.hintSpotlight {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
 
 * {
   margin: 0;
@@ -46,14 +107,7 @@
   display: block;
 }
 
-
-
-
 .buttonGroup {
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  z-index: 100;
   display: flex;
   gap: 12px;
   
@@ -119,12 +173,9 @@ button.active {
   transform: scale(0.98);
 }
 
-
-
 body {
   background-color: var(--color-bg);
 }
-
 
 .risk {
   position: relative;
@@ -152,10 +203,6 @@ body {
 }
 
 .riskContainer {
-  position: fixed;
-  bottom: 130px;
-  right: 210px;
-  z-index: 100;
   display: flex;
   gap: 12px;
   
@@ -172,19 +219,13 @@ body {
   border-radius: 15px;
 }
 
-
 .sliderWord{
   color: white;
   text-align: center;
   padding-bottom: 15px;
 }
 
-
 .slideCon {
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,7 +238,6 @@ body {
   box-shadow: 
     var(--glass-shadow),
     inset 1px 1px 1px var(--glass-highlight);
-  /*filter: url(#glass-distortion) saturate(120%) brightness(1.15);*/
   padding: 5px;
   border-radius: 20px;
 }
@@ -347,43 +387,41 @@ body {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-
 /*Hint*/
-.sliderHint {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+.hintContainer {
   background: var(--color-gradient-hint);
-  
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    var(--glass-shadow),
+    inset 1px 1px 1px var(--glass-highlight);
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.sliderHint {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    var(--glass-shadow),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.1);
   color: white;
   padding: 14px 20px;
   border-radius: 10px;
   font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  
-  
-  z-index: 10;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   max-width: 80%;
   text-align: center;
   line-height: 1.4;
-  
 }
 
 .sliderHint.fadeOut {
   opacity: 0;
 }
-
-
-
-
-
-
-
-
-
 
 /* Responsive Styles */
 @media (max-width: 480px) {
@@ -396,12 +434,15 @@ body {
     align-items: center !important;
   }
 
-  .buttonGroup {
+  .buttonSpotlight {
     position: fixed !important;
     top: 16px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 1000 !important;
+  }
+
+  .buttonGroup {
     display: flex !important;
     flex-direction: row !important;
     gap: 10px !important;
@@ -418,12 +459,15 @@ body {
     border-radius: 10px !important;
   }
 
-  .slideCon {
+  .sliderSpotlight {
     position: absolute !important;
     bottom: 30% !important;
     margin-right: -15px !important;
     transform: translateY(50%) !important;
     z-index: 100 !important;
+  }
+
+  .slideCon {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -479,15 +523,18 @@ body {
     transform: translateX(160px) !important;
   }
 
-  .riskContainer {
+  .riskSpotlight {
     position: fixed !important;
     top: 66px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
+    z-index: 99;
+  }
+
+  .riskContainer {
     width: 200px;
     max-width: 260px;
     border-radius: 13px;
-    z-index: 99;
     box-shadow: 0 2px 6px var(--color-shadow);
     height: fit-content;
     display: flex;
@@ -503,27 +550,33 @@ body {
     border-radius: 8px;
     padding: 5px;
   }
-/*MOBILE HINT*/
-  .sliderHint {
+
+  /*MOBILE HINT*/
+  .hintSpotlight {
     position: fixed !important;
     bottom: 15% !important;
-    left: 40% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 10 !important;
+  }
+
+  .hintContainer {
+    width: 55vw;
+  }
+
+  .sliderHint {
     height: fit-content;
     font-size: 1rem !important;
-    width: 55% !important;
+    width: 100% !important;
     text-align: center !important;
     color: #fff !important;
     border-radius: 10px !important;
     pointer-events: none !important;
-    z-index: 10 !important;
   }
 }
 
-
-
-
 @media (max-height: 670px) and (max-width: 480px) {
-  .slideCon {
+  .sliderSpotlight {
     bottom: 220px !important;
   }
 }
