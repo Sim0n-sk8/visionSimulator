@@ -88,7 +88,7 @@ const MyopiaSimulator = () => {
 
 
         {/* Hint text shown initially */}
-            {showHint && <div className="sliderHint">Use the slider to show different amounts of blur caused by myopia</div>}
+            {showHint && <div className="hintContainer"><div className="sliderHint">Use the slider to show different amounts of blur caused by myopia</div></div>}
 
         {/* Scene selection buttons */}
         <div className="buttonGroup">
@@ -98,9 +98,8 @@ const MyopiaSimulator = () => {
             className={`schoolBtn ${
               currentScene === (isTablet ? 'a' : 's') ? 'active' : ''
             }`}
-            onClick={() => handleSceneChange('s')}
-          >
-            School
+            onClick={() => handleSceneChange('s')}>
+            SCHOOL
           </button>
 
              {/* Playground */}
@@ -110,7 +109,7 @@ const MyopiaSimulator = () => {
             }`}
             onClick={() => handleSceneChange('p')}
           >
-            Sport
+            SPORT
           </button>
 
           {/* Road */}
@@ -120,7 +119,7 @@ const MyopiaSimulator = () => {
             }`}
             onClick={() => handleSceneChange('r')}
           >
-            Street
+            STREET
           </button>
 
          
