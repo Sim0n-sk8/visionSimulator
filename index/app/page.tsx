@@ -1,41 +1,7 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
-
-// SpotlightCard Component
-interface SpotlightCardProps extends React.PropsWithChildren {
-  className?: string;
-  spotlightColor?: string;
-}
-
-const SpotlightCard: React.FC<SpotlightCardProps> = ({
-  children,
-  className = "",
-  spotlightColor = "rgba(255, 255, 255, 0.25)"
-}) => {
-  const divRef = useRef<HTMLDivElement>(null);
-  
-  const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    if (!divRef.current) return;
-    const rect = divRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    divRef.current.style.setProperty("--mouse-x", `${x}px`);
-    divRef.current.style.setProperty("--mouse-y", `${y}px`);
-    divRef.current.style.setProperty("--spotlight-color", spotlightColor);
-  };
-  
-  return (
-    <div
-      ref={divRef}
-      onMouseMove={handleMouseMove}
-      className={`card-spotlight ${className}`}
-    >
-      {children}
-    </div>
-  );
-};
 
 const MyopiaSimulator = () => {
   // Define all possible scene keys
@@ -60,7 +26,7 @@ const MyopiaSimulator = () => {
     d: 'delta',
   };
 
-  // Looks for screen width to handle scene change from desktop to mobile
+  // Looks for screen width to handle scene chang from desktop to mobile
   useEffect(() => {
     const handleResize = () => {
       const tablet = window.innerWidth <= 800;
@@ -101,6 +67,7 @@ const MyopiaSimulator = () => {
 
   return (
     <>
+     
       <Head>
         <title>Myopia Simulator</title>
         <meta charSet="UTF-8" />
@@ -119,93 +86,90 @@ const MyopiaSimulator = () => {
           <img src="/assets/logo.png" className="titleImg" alt="Logo" />
         </h1>
 
-        {/* Hint text shown initially with spotlight effect */}
-        {showHint && (
-          <SpotlightCard className="hintSpotlight" spotlightColor="rgba(92, 166, 220, 0.4)">
-            <div className="hintContainer">
-              <div className="sliderHint">Use the slider to show different amounts of blur caused by myopia</div>
-            </div>
-          </SpotlightCard>
-        )}
 
-        {/* Scene selection buttons with spotlight effect */}
-        <SpotlightCard className="buttonSpotlight" spotlightColor="rgba(255, 255, 255, 0.3)">
-          <div className="buttonGroup">
-            {/* Classroom */}
-            <button
-              className={`schoolBtn ${
-                currentScene === (isTablet ? 'a' : 's') ? 'active' : ''
-              }`}
-              onClick={() => handleSceneChange('s')}>
-              SCHOOL
-            </button>
+        {/* Hint text shown initially */}
+            {showHint && <div className="hintContainer"><div className="sliderHint">Use the slider to show different amounts of blur caused by myopia</div></div>}
 
-            {/* Playground */}
-            <button
-              className={`playBtn ${
-                currentScene === (isTablet ? 'd' : 'p') ? 'active' : ''
-              }`}
-              onClick={() => handleSceneChange('p')}
-            >
-              SPORT
-            </button>
+        {/* Scene selection buttons */}
+        <div className="buttonGroup">
 
-            {/* Road */}
-            <button
-              className={`roadBtn ${
-                currentScene === (isTablet ? 'b' : 'r') ? 'active' : ''
-              }`}
-              onClick={() => handleSceneChange('r')}
-            >
-              STREET
-            </button>
-          </div>
-        </SpotlightCard>
+          {/* Classroom */}
+          <button
+            className={`schoolBtn ${
+              currentScene === (isTablet ? 'a' : 's') ? 'active' : ''
+            }`}
+            onClick={() => handleSceneChange('s')}>
+            SCHOOL
+          </button>
+
+             {/* Playground */}
+          <button
+            className={`playBtn ${
+              currentScene === (isTablet ? 'd' : 'p') ? 'active' : ''
+            }`}
+            onClick={() => handleSceneChange('p')}
+          >
+            SPORT
+          </button>
+
+          {/* Road */}
+          <button
+            className={`roadBtn ${
+              currentScene === (isTablet ? 'b' : 'r') ? 'active' : ''
+            }`}
+            onClick={() => handleSceneChange('r')}
+          >
+            STREET
+          </button>
+
+         
+        </div>
 
         {/* Myopia risk level display */}
-        <SpotlightCard className="riskSpotlight" spotlightColor="rgba(92, 166, 220, 0.3)">
-          <div className="riskContainer">
-            <p className="risk">
-              MYOPIA RISK LEVEL: {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
-            </p>
-          </div>
-        </SpotlightCard>
+        <div className="riskContainer">
+          <p className="risk">
+            MYOPIA RISK LEVEL: {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
+          </p>
+        </div>
 
-        {/* Slider section with spotlight effect */}
-        <SpotlightCard className="sliderSpotlight" spotlightColor="rgba(92, 166, 220, 0.35)">
-          <div className="slideCon">
-            <div className="sliderContainer">
-              {/* Slider numbers above the slider */}
-              <div className="sliderNumbers">
-                {sliderRange.map((num) => (
-                  <span
-                    key={num}
-                    className={`number ${sliderValue === num ? 'active' : ''}`}
-                  >
-                    {-num}
-                  </span>
-                ))}
-              </div>
+        {/* Slider section */}
+        <div className="slideCon">
+          <div className="sliderContainer">
 
-              {/* Actual range input slider */}
-              <input
-                type="range"
-                className="slider"
-                min="0"
-                max="10"
-                value={sliderValue}
-                onChange={(e) => {
-                  setSliderValue(parseInt(e.target.value));
-                  if (showHint) setShowHint(false); // Hide hint once user interacts
-                }}
-              />
+            
+
+            {/* Slider numbers above the slider */}
+            <div className="sliderNumbers">
+              {sliderRange.map((num) => (
+                <span
+                  key={num}
+                  className={`number ${sliderValue === num ? 'active' : ''}`}
+                >
+                  {-num}
+                </span>
+              ))}
             </div>
+
+            {/* Actual range input slider */}
+            <input
+              type="range"
+              className="slider"
+              min="0"
+              max="10"
+              value={sliderValue}
+              onChange={(e) => {
+                setSliderValue(parseInt(e.target.value));
+                if (showHint) setShowHint(false); // Hide hint once user interacts
+              }}
+            />
           </div>
-        </SpotlightCard>
+        </div>
 
         {/* Image display container */}
         {/* Loops through all scene keys and slider values, showing only
             the currently active scene and slider value image */}
+
+
         {(['s', 'r', 'p', 'a', 'b', 'd'] as SceneKey[]).map((sceneKey) => (
           <div key={sceneKey} className="fullscreenImg">
             {sliderRange.map((val) => (
@@ -227,3 +191,10 @@ const MyopiaSimulator = () => {
 };
 
 export default MyopiaSimulator;
+
+
+
+/*To do-
+  Hint to center of screen :" Use the slider to show diffrent amounts of blur caused by myopia"
+  Mobile slider to be smaller
+*/
