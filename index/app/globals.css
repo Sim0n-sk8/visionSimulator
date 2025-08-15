@@ -1,27 +1,56 @@
+/* ============================================
+   ROOT VARIABLES
+============================================ */
+
 :root {
-  --color-bg: #202427;
-  --color-surface: #2f2f2f;
-  --color-surface-alt: #323e47;
-  --color-surface-alt-2: #37444d;
-  --color-button: #4f6270;
-  --color-button-hover: #151d24;
-  --color-accent: #5ca6dc;
-  --color-text: #ffffff;
-  --color-border-active: #ffffff22;
-  --color-shadow: rgba(0, 0, 0, 0.3);
-  --color-shadow-heavy: rgba(0, 0, 0, 0.6);
-  --color-hint: #0371c0;
-  --color-gradient-hint: linear-gradient(135deg,#257910, #0657d1ab) !important;
-  
+  --colorBg: #1a1d23;
+  --colorSurface: #242831;
+  --colorSurfaceAlt: #2d3441;
+  --colorSurfaceAlt2: #364152;
+  --colorButton: #4a5568;
+  --colorButtonHover: #2d3748;
+  --colorAccent: #3182ce;
+  --colorText: #ffffff;
+  --colorBorderActive: #ffffff22;
+  --colorShadow: rgba(0, 0, 0, 0.3);
+  --colorShadowHeavy: rgba(0, 0, 0, 0.6);
+  --colorHint: #2b6cb0;
+  --colorGradientHint: linear-gradient(125deg, #1e53c4ad, #3b83f6c9);
+  --colorGradientHintRev: rgba(255, 255, 255, 0.1);
   
   /* Glass morphism variables */
-  --glass-bg: rgba(92, 166, 220, 0.5);
-  --glass-highlight: rgba(255, 255, 255, 0.25);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glassHighlight: rgba(255, 255, 255, 0.25);
+  --glassBorder: rgba(59, 130, 246, 0.3);
+  --glassShadow: 0 8px 32px rgba(37, 99, 235, 0.15);
+  
+  /* New variables for hardcoded values */
+  --sliderBg1: rgba(92, 166, 220, 0.8);
+  --sliderBg2: rgba(124, 199, 253, 0.8);
+  --sliderBorderGlass: rgba(255, 255, 255, 0.15);
+  --sliderThumbGradientStart: rgba(255, 255, 255, 0.9);
+  --sliderThumbGradientEnd: rgba(255, 255, 255, 0.7);
+  --sliderThumbBorder: rgba(255, 255, 255, 0.3);
+  --sliderThumbHoverBorder: rgba(255, 255, 255, 0.5);
+  --buttonGlassBase: rgba(255, 255, 255, 0.1);
+  --buttonGlassHover: rgba(255, 255, 255, 0.2);
+  --buttonGlassActive: rgba(255, 255, 255, 0.25);
+  --riskGlass: rgba(255, 255, 255, 0.12);
+  --numberActiveShadow: rgba(0, 0, 0, 0.5);
+  --numberShadow: rgba(0, 0, 0, 0.3);
+  --sliderShadowInset: rgba(0, 0, 0, 0.2);
+  --sliderHighlight: rgba(255, 255, 255, 0.1);
+  --sliderThumbShadow: rgba(0, 0, 0, 0.3);
+  --sliderThumbHoverShadow: rgba(0, 0, 0, 0.4);
+  --sliderContainerGlass: rgba(255, 255, 255, 0.15);
+  --hintShadow: rgba(0, 0, 0, 0.2);
 }
 
 
+
+
+/* ============================================
+   GLOBAL RESET
+============================================ */
 
 * {
   margin: 0;
@@ -29,6 +58,17 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body {
+  background-color: var(--colorBg);
+}
+
+
+
+
+/* ============================================
+   FULLSCREEN IMAGE
+============================================ */
 
 .fullscreenImg {
   position: fixed;
@@ -49,6 +89,10 @@
 
 
 
+/* ============================================
+   BUTTON STYLES
+============================================ */
+
 .buttonGroup {
   position: fixed;
   top: 20px;
@@ -58,13 +102,13 @@
   gap: 12px;
   
   /* Glass morphism effect */
-  background: var(--color-gradient-hint);
+  background: var(--colorGradientHint);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--glassBorder);
   box-shadow: 
-    var(--glass-shadow),
-    inset 1px 1px 1px var(--glass-highlight);
+    var(--glassShadow),
+    inset 1px 1px 1px var(--glassHighlight);
   
   opacity: 01;
   padding: 5px;
@@ -72,18 +116,22 @@
   transition: transform 0.1s ease-in-out;
 }
 
+.buttonGroup:active {
+  transform: scale(0.98);
+}
+
 button {
   /* Glass morphism background */
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--buttonGlassBase);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--glassBorder);
   box-shadow: 
-    0 4px 15px rgba(0, 0, 0, 0.2),
-    inset 1px 1px 1px rgba(255, 255, 255, 0.1);
+    0 4px 15px var(--sliderShadowInset),
+    inset 1px 1px 1px var(--sliderHighlight);
     
   border-radius: 15px;
-  color: var(--color-text);
+  color: var(--colorText);
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -96,49 +144,66 @@ button {
 }
 
 button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--buttonGlassHover);
+  border-color: var(--sliderThumbBorder);
   transform: scale(1);
   box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.3),
-    inset 1px 1px 1px rgba(255, 255, 255, 0.2);
+    0 8px 25px var(--numberShadow),
+    inset 1px 1px 1px var(--buttonGlassHover);
 }
 
 button:active,
 button.active {
-  background: rgba(255, 255, 255, 0.25);
-  border: 2px solid var(--color-border-active);
-  color: var(--color-text);
+  background: var(--buttonGlassActive);
+  border: 2px solid var(--colorBorderActive);
+  color: var(--colorText);
   transform: scale(1);
   box-shadow: 
-    0 4px 15px rgba(0, 0, 0, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-.buttonGroup:active {
-  transform: scale(0.98);
+    0 4px 15px var(--sliderThumbHoverShadow),
+    inset 2px 2px 4px var(--sliderHighlight);
 }
 
 
 
-body {
-  background-color: var(--color-bg);
-}
 
+/* ============================================
+   RISK CONTAINER
+============================================ */
+
+.riskContainer {
+  position: fixed;
+  bottom: 130px;
+  right: 210px;
+  z-index: 100;
+  display: flex;
+  gap: 12px;
+  
+  /* Glass morphism effect */
+  background: var(--colorGradientHint);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glassBorder);
+  box-shadow: 
+    var(--glassShadow),
+    inset 1px 1px 1px var(--glassHighlight);
+    
+  padding: 5px;
+  border-radius: 15px;
+}
 
 .risk {
   position: relative;
-  font-size: 0.80rem;
+  font-size: 0.75rem;
   font-weight: 700;
   
   /* Glass morphism effect */
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--riskGlass);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--glassBorder);
   box-shadow: 
-    var(--glass-shadow),
-    inset 1px 1px 1px rgba(255, 255, 255, 0.1);
+    var(--glassShadow),
+    inset 1px 1px 1px var(--sliderHighlight);
     
   padding: 12px 15px;
   border-radius: 10px;
@@ -151,34 +216,12 @@ body {
   color: white;
 }
 
-.riskContainer {
-  position: fixed;
-  bottom: 130px;
-  right: 210px;
-  z-index: 100;
-  display: flex;
-  gap: 12px;
-  
-  /* Glass morphism effect */
-  background: var(--color-gradient-hint);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  box-shadow: 
-    var(--glass-shadow),
-    inset 1px 1px 1px var(--glass-highlight);
-    
-  padding: 5px;
-  border-radius: 15px;
-}
 
 
-.sliderWord{
-  color: white;
-  text-align: center;
-  padding-bottom: 15px;
-}
 
+/* ============================================
+   SLIDER COMPONENTS
+============================================ */
 
 .slideCon {
   position: fixed;
@@ -190,16 +233,22 @@ body {
   align-items: center;
   
   /* Glass morphism effect */
-  background: var(--color-gradient-hint);
+  background: var(--colorGradientHint);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--glassBorder);
   box-shadow: 
-    var(--glass-shadow),
-    inset 1px 1px 1px var(--glass-highlight);
-  /*filter: url(#glass-distortion) saturate(120%) brightness(1.15);*/
+    var(--glassShadow),
+    inset 1px 1px 1px var(--glassHighlight);
+  
   padding: 5px;
   border-radius: 20px;
+}
+
+.sliderWord{
+  color: var(--colorText);
+  text-align: center;
+  padding-bottom: 15px;
 }
 
 .sliderContainer {
@@ -207,13 +256,13 @@ body {
   width: 390px;
   
   /* Glass morphism effect */
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--colorGradientHintRev);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--glassBorder);
   box-shadow: 
-    var(--glass-shadow),
-    inset 1px 1px 1px rgba(255, 255, 255, 0.15);
+    var(--glassShadow),
+    inset 1px 1px 1px var(--sliderContainerGlass);
     
   border-radius: 15px;
   padding: 15px;
@@ -232,17 +281,17 @@ body {
 .number {
   font-size: 14px;
   font-weight: bold;
-  color: var(--color-text);
+  color: var(--colorText);
   transition: all 0.3s ease;
   min-width: 20px;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px var(--numberShadow);
 }
 
 .number.active {
   transform: scale(1.7);
   color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px var(--numberActiveShadow);
 }
 
 .slider {
@@ -250,16 +299,16 @@ body {
   width: 100%;
   height: 12px;
   background: linear-gradient(90deg, 
-    rgba(92, 166, 220, 0.8) 0%, 
-    rgba(92, 166, 220, 0.8) 20%, 
-    rgba(124, 199, 253, 0.8) 20%, 
-    rgba(124, 199, 253, 0.8) 40%, 
-    rgba(92, 166, 220, 0.8) 40%, 
-    rgba(92, 166, 220, 0.8) 60%, 
-    rgba(124, 199, 253, 0.8) 60%, 
-    rgba(124, 199, 253, 0.8) 80%, 
-    rgba(92, 166, 220, 0.8) 80%, 
-    rgba(92, 166, 220, 0.8) 100%);
+    var(--sliderBg1) 0%, 
+    var(--sliderBg1) 20%, 
+    var(--sliderBg2) 20%, 
+    var(--sliderBg2) 40%, 
+    var(--sliderBg1) 40%, 
+    var(--sliderBg1) 60%, 
+    var(--sliderBg2) 60%, 
+    var(--sliderBg2) 80%, 
+    var(--sliderBg1) 80%, 
+    var(--sliderBg1) 100%);
   border-radius: 12px;
   outline: none;
   -webkit-appearance: none;
@@ -268,10 +317,10 @@ body {
   /* Glass morphism effect for slider track */
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--sliderBorderGlass);
   box-shadow: 
-    inset 0 2px 4px rgba(0, 0, 0, 0.2),
-    0 1px 2px rgba(255, 255, 255, 0.1);
+    inset 0 2px 4px var(--sliderShadowInset),
+    0 1px 2px var(--sliderHighlight);
 }
 
 .slider::-webkit-slider-runnable-track {
@@ -296,13 +345,13 @@ body {
   height: 30px;
   
   /* Glass morphism effect for slider thumb */
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid var(--sliderThumbBorder);
   box-shadow: 
-    0 4px 15px rgba(0, 0, 0, 0.3),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+    0 4px 15px var(--sliderThumbShadow),
+    inset 1px 1px 2px var(--sliderThumbBorder);
     
   border-radius: 50%;
   cursor: pointer;
@@ -314,9 +363,9 @@ body {
   transform: scale(1.1);
   background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
   box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.4),
+    0 6px 20px var(--sliderThumbHoverShadow),
     inset 1px 1px 3px rgba(255, 255, 255, 0.4);
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: var(--sliderThumbHoverBorder);
 }
 
 .slider::-moz-range-thumb {
@@ -324,13 +373,13 @@ body {
   height: 32px;
   
   /* Glass morphism effect for Firefox slider thumb */
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid var(--sliderThumbBorder);
   box-shadow: 
-    0 4px 15px rgba(0, 0, 0, 0.3),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+    0 4px 15px var(--sliderThumbShadow),
+    inset 1px 1px 2px var(--sliderThumbBorder);
     
   border-radius: 50%;
   cursor: pointer;
@@ -342,34 +391,37 @@ body {
   transform: scale(1.1);
   background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
   box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.4),
+    0 6px 20px var(--sliderThumbHoverShadow),
     inset 1px 1px 3px rgba(255, 255, 255, 0.4);
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: var(--sliderThumbHoverBorder);
 }
 
 
-/*Hint*/
+
+
+/* ============================================
+   HINT STYLES
+============================================ */
+
 .sliderHint {
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  background: var(--color-gradient-hint);
+  background: var(--colorGradientHint);
   
-  color: white;
+  color: var(--colorText);
   padding: 14px 20px;
   border-radius: 10px;
   font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   
-  
   z-index: 10;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px var(--hintShadow);
   max-width: 80%;
   text-align: center;
   line-height: 1.4;
-  
 }
 
 .sliderHint.fadeOut {
@@ -379,13 +431,10 @@ body {
 
 
 
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+============================================ */
 
-
-
-
-
-
-/* Responsive Styles */
 @media (max-width: 480px) {
   body {
     padding: 0 !important;
@@ -406,8 +455,8 @@ body {
     flex-direction: row !important;
     gap: 10px !important;
     border-radius: 15px !important;
-    background-color: var(--color-surface-alt) !important;
-    box-shadow: 0 3px 8px var(--color-shadow) !important;
+    background-color: var(--colorSurfaceAlt) !important;
+    box-shadow: 0 3px 8px var(--colorShadow) !important;
     padding: 5px !important;
     width: fit-content !important;
   }
@@ -437,7 +486,7 @@ body {
     padding: 10px !important;
     margin: 0 !important;
     border-radius: 16px !important;
-    box-shadow: 0 3px 8px var(--color-shadow) !important;
+    box-shadow: 0 3px 8px var(--colorShadow) !important;
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
@@ -466,7 +515,7 @@ body {
     outline: none;
     margin: 5;
     appearance: none;
-    box-shadow: inset 0 2px 4px var(--color-shadow);
+    box-shadow: inset 0 2px 4px var(--colorShadow);
     flex-shrink: 0 !important;
   }
 
@@ -488,7 +537,7 @@ body {
     max-width: 260px;
     border-radius: 13px;
     z-index: 99;
-    box-shadow: 0 2px 6px var(--color-shadow);
+    box-shadow: 0 2px 6px var(--colorShadow);
     height: fit-content;
     display: flex;
     justify-content: center;
@@ -503,7 +552,7 @@ body {
     border-radius: 8px;
     padding: 5px;
   }
-/*MOBILE HINT*/
+
   .sliderHint {
     position: fixed !important;
     bottom: 15% !important;
@@ -512,14 +561,12 @@ body {
     font-size: 1rem !important;
     width: 55% !important;
     text-align: center !important;
-    color: #fff !important;
+    color: var(--colorText) !important;
     border-radius: 10px !important;
     pointer-events: none !important;
     z-index: 10 !important;
   }
 }
-
-
 
 
 @media (max-height: 670px) and (max-width: 480px) {
