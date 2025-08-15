@@ -15,13 +15,13 @@
   --colorShadow: rgba(0, 0, 0, 0.3);
   --colorShadowHeavy: rgba(0, 0, 0, 0.6);
   --colorHint: #2b6cb0;
-  --colorGradientHint: linear-gradient(125deg, #1e53c4ad, #3b83f6c9);
-  --colorGradientHintRev: rgba(255, 255, 255, 0.1);
+  --colorGradientHint:#1e53c4e5;
+  --colorGradientHintRev: rgba(228, 219, 219, 0.288);
   
   /* Glass morphism variables */
-  --glassHighlight: rgba(255, 255, 255, 0.25);
-  --glassBorder: rgba(59, 130, 246, 0.3);
-  --glassShadow: 0 8px 32px rgba(37, 99, 235, 0.15);
+  --glassHighlight: rgba(255, 255, 255, 0.521);
+  --glassBorder: rgba(32, 69, 128, 0.39);
+  --glassShadow: 0 8px 32px rgba(27, 57, 122, 0.247);
   
   /* New variables for hardcoded values */
   --sliderBg1: rgba(92, 166, 220, 0.8);
@@ -34,7 +34,7 @@
   --buttonGlassBase: rgba(255, 255, 255, 0.1);
   --buttonGlassHover: rgba(255, 255, 255, 0.2);
   --buttonGlassActive: rgba(255, 255, 255, 0.25);
-  --riskGlass: rgba(255, 255, 255, 0.12);
+  --riskGlass: rgba(255, 255, 255, 0.288);
   --numberActiveShadow: rgba(0, 0, 0, 0.5);
   --numberShadow: rgba(0, 0, 0, 0.3);
   --sliderShadowInset: rgba(0, 0, 0, 0.2);
@@ -403,26 +403,56 @@ button.active {
    HINT STYLES
 ============================================ */
 
-.sliderHint {
+.hintContainer {
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  background: var(--colorGradientHint);
+  z-index: 100;
+  display: flex;
+  gap: 12px;
   
-  color: var(--colorText);
-  padding: 14px 20px;
-  border-radius: 10px;
+  /* Glass morphism effect */
+  background: var(--colorGradientHint);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glassBorder);
+  box-shadow: 
+    var(--glassShadow),
+    inset 1px 1px 1px var(--glassHighlight);
+    
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.sliderHint {
+  position: relative;
   font-size: 1.4rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
   
-  z-index: 10;
-  box-shadow: 0 8px 20px var(--hintShadow);
-  max-width: 80%;
+  /* Glass morphism effect */
+  background: var(--riskGlass);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--glassBorder);
+  box-shadow: 
+    var(--glassShadow),
+    inset 1px 1px 1px var(--sliderHighlight);
+    
+  padding: 14px 20px;
+  border-radius: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: var(--colorText);
   text-align: center;
   line-height: 1.4;
+  letter-spacing: 0.5px;
 }
+
 
 .sliderHint.fadeOut {
   opacity: 0;
@@ -455,8 +485,6 @@ button.active {
     flex-direction: row !important;
     gap: 10px !important;
     border-radius: 15px !important;
-    background-color: var(--colorSurfaceAlt) !important;
-    box-shadow: 0 3px 8px var(--colorShadow) !important;
     padding: 5px !important;
     width: fit-content !important;
   }
@@ -486,7 +514,7 @@ button.active {
     padding: 10px !important;
     margin: 0 !important;
     border-radius: 16px !important;
-    box-shadow: 0 3px 8px var(--colorShadow) !important;
+    
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
@@ -515,7 +543,7 @@ button.active {
     outline: none;
     margin: 5;
     appearance: none;
-    box-shadow: inset 0 2px 4px var(--colorShadow);
+    
     flex-shrink: 0 !important;
   }
 
@@ -537,7 +565,7 @@ button.active {
     max-width: 260px;
     border-radius: 13px;
     z-index: 99;
-    box-shadow: 0 2px 6px var(--colorShadow);
+    
     height: fit-content;
     display: flex;
     justify-content: center;
@@ -553,16 +581,15 @@ button.active {
     padding: 5px;
   }
 
-  .sliderHint {
+  .hintContainer {
     position: fixed !important;
-    bottom: 15% !important;
-    left: 40% !important;
+    top: 65% !important;
+    left: 35% !important;
     height: fit-content;
     font-size: 1rem !important;
     width: 55% !important;
     text-align: center !important;
     color: var(--colorText) !important;
-    border-radius: 10px !important;
     pointer-events: none !important;
     z-index: 10 !important;
   }

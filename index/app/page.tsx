@@ -194,7 +194,3 @@ export default MyopiaSimulator;
 
 
 
-/*To do-
-  Hint to center of screen :" Use the slider to show diffrent amounts of blur caused by myopia"
-  Mobile slider to be smaller
-*/
