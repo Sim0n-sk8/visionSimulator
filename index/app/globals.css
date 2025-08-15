@@ -15,7 +15,7 @@
   --colorShadow: rgba(0, 0, 0, 0.3);
   --colorShadowHeavy: rgba(0, 0, 0, 0.6);
   --colorHint: #2b6cb0;
-  --colorGradientHint:#1e53c4e5;
+  --colorGradientHint:#1e53c4e5 !important;
   --colorGradientHintRev: rgba(228, 219, 219, 0.288);
   
   /* Glass morphism variables */
