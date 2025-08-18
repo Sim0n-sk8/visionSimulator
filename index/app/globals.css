@@ -1,41 +1,8 @@
 /* ============================================
    ROOT VARIABLES
 ============================================ */
+@import './roots.css';
 
-:root {
-
-  --colorText: #ffffff;
-  --colorBorderActive: #ffffff22;
-  
-  --colorGradientHint: rgba(30, 83, 196, 0.72);
-  --colorGradientHintRev: rgba(228, 219, 219, 0.288);
-  
-  /* Glass morphism variables - toned down */
-  --glassHighlight: rgba(255, 255, 255, 0.08);
-  --glassBorder: rgba(32, 69, 128, 0.39);
-  --glassShadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  
-  /* Original variables with reduced intensity */
-  --sliderBg1: rgba(92, 166, 220, 0.8);
-  --sliderBg2: rgba(124, 199, 253, 0.8);
-  --sliderBorderGlass: rgba(255, 255, 255, 0.15);
-  --sliderThumbGradientStart: rgba(255, 255, 255, 0.9);
-  --sliderThumbGradientEnd: rgba(255, 255, 255, 0.7);
-  --sliderThumbBorder: rgba(255, 255, 255, 0.3);
-  --sliderThumbHoverBorder: rgba(255, 255, 255, 0.5);
-  --buttonGlassBase: rgba(255, 255, 255, 0.1);
-  --buttonGlassHover: rgba(255, 255, 255, 0.2);
-  --buttonGlassActive: rgba(255, 255, 255, 0.25);
-  --riskGlass: rgba(255, 255, 255, 0.288);
-  --numberActiveShadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  --numberShadow: rgba(0, 0, 0, 0.1);
-  --sliderShadowInset: 0 4px 30px rgba(0, 0, 0, 0.1);
-  --sliderHighlight: rgba(255, 255, 255, 0.05);
-  --sliderThumbShadow: rgba(0, 0, 0, 0.15);
-  --sliderThumbHoverShadow: rgba(0, 0, 0, 0.2);
-  --sliderContainerGlass: rgba(255, 255, 255, 0.15);
-  --hintShadow:0 4px 30px rgba(0, 0, 0, 0.1);
-}
 
 /* ============================================
    GLOBAL RESET

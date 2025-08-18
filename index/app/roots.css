@@ -1,0 +1,28 @@
+:root {
+  --colorText: #ffffff !important;
+  --colorBorderActive: #ffffff22 !important;
+  --colorGradientHint: rgba(30, 83, 196, 0.72) !important;
+  --colorGradientHintRev: rgba(228, 219, 219, 0.288) !important;
+  --glassHighlight: rgba(255, 255, 255, 0.08) !important;
+  --glassBorder: rgba(32, 69, 128, 0.39) !important;
+  --glassShadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  --sliderBg1: rgba(92, 166, 220, 0.8) !important;
+  --sliderBg2: rgba(124, 199, 253, 0.8) !important;
+  --sliderBorderGlass: rgba(255, 255, 255, 0.15) !important;
+  --sliderThumbGradientStart: rgba(255, 255, 255, 0.9) !important;
+  --sliderThumbGradientEnd: rgba(255, 255, 255, 0.7) !important;
+  --sliderThumbBorder: rgba(255, 255, 255, 0.3) !important;
+  --sliderThumbHoverBorder: rgba(255, 255, 255, 0.5) !important;
+  --buttonGlassBase: rgba(255, 255, 255, 0.1) !important;
+  --buttonGlassHover: rgba(255, 255, 255, 0.2) !important;
+  --buttonGlassActive: rgba(255, 255, 255, 0.25) !important;
+  --riskGlass: rgba(255, 255, 255, 0.288) !important;
+  --numberActiveShadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  --numberShadow: rgba(0, 0, 0, 0.1) !important;
+  --sliderShadowInset: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  --sliderHighlight: rgba(255, 255, 255, 0.05) !important;
+  --sliderThumbShadow: rgba(0, 0, 0, 0.15) !important;
+  --sliderThumbHoverShadow: rgba(0, 0, 0, 0.2) !important;
+  --sliderContainerGlass: rgba(255, 255, 255, 0.15) !important;
+  --hintShadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+}
