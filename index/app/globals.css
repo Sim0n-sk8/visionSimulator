@@ -51,8 +51,8 @@
   
   /* Subtle glass morphism effect */
   background: var(--colorGradientHint);
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
  
@@ -69,8 +69,8 @@
 button {
   /* Subtle glass morphism background */
   background: var(--riskGlass);
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: 0 2px 8px var(--sliderShadowInset);
   border-radius: 15px;
@@ -113,8 +113,8 @@ button.active {
   display: flex;
   gap: 12px;
   background: var(--colorGradientHint);
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
   padding: 5px;
@@ -126,8 +126,8 @@ button.active {
   font-size: 0.75rem;
   font-weight: 700;
   background: var(--riskGlass);
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
   padding: 12px 15px;
@@ -154,8 +154,8 @@ button.active {
   flex-direction: column;
   align-items: center;
   background: var(--colorGradientHint);
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
   padding: 5px;
@@ -172,8 +172,8 @@ button.active {
   position: relative;
   width: 390px;
   background: var(--riskGlass);
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
   border-radius: 15px;
@@ -225,8 +225,8 @@ button.active {
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--sliderBorderGlass);
   box-shadow: 0 1px 3px var(--colorShadow);
 }
@@ -255,8 +255,8 @@ button.active {
   /* Using solid colors with opacity */
   background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
 
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 2px solid var(--sliderThumbBorder);
   box-shadow: 0 2px 8px var(--sliderThumbShadow);
     
@@ -281,8 +281,8 @@ button.active {
   /* Using solid colors with opacity */
   background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
 
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 2px solid var(--sliderThumbBorder);
   box-shadow: 0 2px 8px var(--sliderThumbShadow);
     
@@ -316,8 +316,8 @@ button.active {
   /* Using solid color with opacity */
   background: var(--colorGradientHint);
 
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
     
@@ -333,8 +333,8 @@ button.active {
   /* Using solid color with opacity */
   background: var(--riskGlass);
 
-  backdrop-filter: blur(10.7px);
-  -webkit-backdrop-filter: blur(10.7px);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
     

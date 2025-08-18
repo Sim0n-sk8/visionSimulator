@@ -25,4 +25,5 @@
   --sliderThumbHoverShadow: rgba(0, 0, 0, 0.2) !important;
   --sliderContainerGlass: rgba(255, 255, 255, 0.15) !important;
   --hintShadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  --globalBlur: 10.7px !important;
 }
