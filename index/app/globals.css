@@ -68,12 +68,11 @@
 
 button {
   /* Subtle glass morphism background */
-  background: var(--buttonGlassBase);
+  background: var(--riskGlass);
   backdrop-filter: blur(10.7px);
   -webkit-backdrop-filter: blur(10.7px);
   border: 1px solid var(--glassBorder);
   box-shadow: 0 2px 8px var(--sliderShadowInset);
-    
   border-radius: 15px;
   color: var(--colorText);
   cursor: pointer;
@@ -113,15 +112,11 @@ button.active {
   z-index: 100;
   display: flex;
   gap: 12px;
-  
-  /* Using solid color with opacity */
   background: var(--colorGradientHint);
-
   backdrop-filter: blur(10.7px);
   -webkit-backdrop-filter: blur(10.7px);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
-    
   padding: 5px;
   border-radius: 15px;
 }
@@ -130,15 +125,11 @@ button.active {
   position: relative;
   font-size: 0.75rem;
   font-weight: 700;
-  
-  /* Using solid color with opacity */
   background: var(--riskGlass);
- 
   backdrop-filter: blur(10.7px);
   -webkit-backdrop-filter: blur(10.7px);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
-    
   padding: 12px 15px;
   border-radius: 10px;
   width: 210px;
@@ -162,15 +153,11 @@ button.active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  /* Using solid color with opacity */
   background: var(--colorGradientHint);
-
   backdrop-filter: blur(10.7px);
   -webkit-backdrop-filter: blur(10.7px);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
-  
   padding: 5px;
   border-radius: 20px;
 }
@@ -184,15 +171,11 @@ button.active {
 .sliderContainer {
   position: relative;
   width: 390px;
-  
-  /* Using solid color with opacity */
-  background: var(--colorGradientHintRev);
-
+  background: var(--riskGlass);
   backdrop-filter: blur(10.7px);
   -webkit-backdrop-filter: blur(10.7px);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
-    
   border-radius: 15px;
   padding: 15px;
   padding-bottom: 20px;
@@ -220,7 +203,6 @@ button.active {
 .number.active {
   transform: scale(1.4);
   color: var(--colorText);
-
   text-shadow: 0 1px 3px var(--numberActiveShadow);
 }
 
@@ -243,9 +225,6 @@ button.active {
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-
-  
-  /* Minimal glass effect for slider track */
   backdrop-filter: blur(10.7px);
   -webkit-backdrop-filter: blur(10.7px);
   border: 1px solid var(--sliderBorderGlass);

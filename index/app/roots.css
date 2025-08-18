@@ -14,8 +14,8 @@
   --sliderThumbBorder: rgba(255, 255, 255, 0.3) !important;
   --sliderThumbHoverBorder: rgba(255, 255, 255, 0.5) !important;
   --buttonGlassBase: rgba(255, 255, 255, 0.1) !important;
-  --buttonGlassHover: rgba(255, 255, 255, 0.2) !important;
-  --buttonGlassActive: rgba(255, 255, 255, 0.25) !important;
+  --buttonGlassHover: rgba(255, 255, 255, 0.5) !important;
+  --buttonGlassActive: rgba(255, 255, 255, 0.418) !important;
   --riskGlass: rgba(255, 255, 255, 0.288) !important;
   --numberActiveShadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   --numberShadow: rgba(0, 0, 0, 0.1) !important;

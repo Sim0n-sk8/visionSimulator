@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 
+
 const MyopiaSimulator = () => {
   // Define all possible scene keys
   type SceneKey = 's' | 'r' | 'p' | 'a' | 'b' | 'd';
