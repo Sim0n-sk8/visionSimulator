@@ -48,15 +48,11 @@
   z-index: 100;
   display: flex;
   gap: 12px;
-  
-  /* Subtle glass morphism effect */
   background: var(--colorGradientHint);
   backdrop-filter: blur(--globalBlur);
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
- 
-  
   padding: 5px;
   border-radius: 20px;
   transition: transform 0.1s ease-in-out;
@@ -67,7 +63,6 @@
 }
 
 button {
-  /* Subtle glass morphism background */
   background: var(--riskGlass);
   backdrop-filter: blur(--globalBlur);
   -webkit-backdrop-filter: blur(--globalBlur);
@@ -312,10 +307,7 @@ button.active {
   z-index: 100;
   display: flex;
   gap: 12px;
-  
-  /* Using solid color with opacity */
   background: var(--colorGradientHint);
-
   backdrop-filter: blur(--globalBlur);
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
@@ -329,15 +321,11 @@ button.active {
   position: relative;
   font-size: 1.4rem;
   font-weight: 600;
-  
-  /* Using solid color with opacity */
   background: var(--riskGlass);
-
   backdrop-filter: blur(--globalBlur);
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
-    
   padding: 14px 20px;
   border-radius: 20px;
   max-width: 100%;
