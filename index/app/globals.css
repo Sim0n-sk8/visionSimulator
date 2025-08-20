@@ -484,3 +484,8 @@ button.active {
     bottom: 220px !important;
   }
 }
+
+
+@media only screen and (orientation: landscape){
+  
+}
