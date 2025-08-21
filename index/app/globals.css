@@ -486,7 +486,27 @@ button.active {
 }
 
 
-@media only screen and (max-width: 900px) and (orientation: landscape) {
+@media only screen and (max-width: 900px) and (orientation: landscape) and (max-height: 600px), 
+   only screen and (max-width: 900px) and (orientation: landscape) and (max-device-aspect-ratio: 4/3) {
+  .slideCon {
+    transform: scale(0.6);
+    transform-origin: bottom right;
+  }
+  
+  .riskContainer {
+    transform: scale(0.6);
+    transform-origin: bottom right;
+  }
+  
+  .buttonGroup {
+    transform: scale(0.6);
+    transform-origin: top right;
+  }
+  
+  .hintContainer {
+    transform: scale(0.6);
+    transform-origin: top left;
+  }
 
 .slideCon {
   position: fixed;
