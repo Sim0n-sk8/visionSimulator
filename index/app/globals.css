@@ -543,10 +543,42 @@ button.active {
   text-shadow: 0 1px 2px var(--numberShadow);
 }
 
-  
+ 
+.hintContainer {
+    position: fixed !important;
+    top: 50% !important;
+    left: 30% !important;
+    height: fit-content;
+    font-size: 1rem !important;
+    width: 50% !important;
+    text-align: center !important;
+    color: var(--colorText) !important;
+    pointer-events: none !important;
+    z-index: 10 !important;
+  }
 
-
-  
+  .sliderHint {
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: var(--riskGlass);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
+  border: 1px solid var(--glassBorder);
+  box-shadow: var(--glassShadow);
+  padding: 14px 20px;
+  border-radius: 20px;
+  max-width: 50%;
+  box-sizing: border-box;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: var(--colorText);
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
   
   
   
