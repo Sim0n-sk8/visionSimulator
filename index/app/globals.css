@@ -273,7 +273,7 @@ button.active {
   width: 32px;
   height: 32px;
   
-  /* Using solid colors with opacity */
+  
   background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
 
   backdrop-filter: blur(--globalBlur);
@@ -486,12 +486,12 @@ button.active {
 }
 
 
-@media only screen and (max-width: 768px) and (orientation: landscape) {
+@media only screen and (max-width: 900px) and (orientation: landscape) {
 
 .slideCon {
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 10px;
+  right: 10px;
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -513,14 +513,14 @@ button.active {
 
 .sliderContainer {
   position: relative;
-  width: 300px;
+  width: 350px;
   background: var(--riskGlass);
   backdrop-filter: blur(--globalBlur);
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
   border-radius: 15px;
-  padding: 15px;
+  padding: 10px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -546,11 +546,11 @@ button.active {
  
 .hintContainer {
     position: fixed !important;
-    top: 50% !important;
-    left: 30% !important;
+    top: 150px !important;
+    left: 250px !important;
     height: fit-content;
     font-size: 1rem !important;
-    width: 50% !important;
+    max-width: 50% !important;
     text-align: center !important;
     color: var(--colorText) !important;
     pointer-events: none !important;
@@ -559,7 +559,7 @@ button.active {
 
   .sliderHint {
   position: relative;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 600;
   background: var(--riskGlass);
   backdrop-filter: blur(--globalBlur);
@@ -568,7 +568,7 @@ button.active {
   box-shadow: var(--glassShadow);
   padding: 14px 20px;
   border-radius: 20px;
-  max-width: 50%;
+  max-width: 100%;
   box-sizing: border-box;
   z-index: 1000;
   align-items: center;
@@ -576,11 +576,46 @@ button.active {
   display: flex;
   color: var(--colorText);
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.2;
   letter-spacing: 0.5px;
 }
   
-  
+.riskContainer {
+  position: fixed;
+  bottom: 100px;
+  right: 10px;
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+  background: var(--colorGradientHint);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
+  border: 1px solid var(--glassBorder);
+  box-shadow: var(--glassShadow);
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.risk {
+  position: relative;
+  font-size: 0.75rem;
+  font-weight: 00;
+  background: var(--riskGlass);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
+  border: 1px solid var(--glassBorder);
+  box-shadow: var(--glassShadow);
+  padding: 12px 15px;
+  border-radius: 10px;
+  width: 210px;
+  box-sizing: border-box;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
   
 
 }
