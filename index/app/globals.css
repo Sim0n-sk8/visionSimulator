@@ -533,12 +533,8 @@ button.active {
 
 .sliderContainer {
   position: relative;
-  width: 350px;
-  background: var(--riskGlass);
-  backdrop-filter: blur(--globalBlur);
-  -webkit-backdrop-filter: blur(--globalBlur);
-  border: 1px solid var(--glassBorder);
-  box-shadow: var(--glassShadow);
+  width: 450px;
+
   border-radius: 15px;
   padding: 10px;
   padding-bottom: 20px;
@@ -581,11 +577,7 @@ button.active {
   position: relative;
   font-size: 1rem;
   font-weight: 600;
-  background: var(--riskGlass);
-  backdrop-filter: blur(--globalBlur);
-  -webkit-backdrop-filter: blur(--globalBlur);
-  border: 1px solid var(--glassBorder);
-  box-shadow: var(--glassShadow);
+
   padding: 14px 20px;
   border-radius: 20px;
   max-width: 100%;
@@ -594,7 +586,7 @@ button.active {
   align-items: center;
   justify-content: center;
   display: flex;
-  color: var(--colorText);
+
   text-align: center;
   line-height: 1.2;
   letter-spacing: 0.5px;
@@ -607,11 +599,7 @@ button.active {
   z-index: 100;
   display: flex;
   gap: 10px;
-  background: var(--colorGradientHint);
-  backdrop-filter: blur(--globalBlur);
-  -webkit-backdrop-filter: blur(--globalBlur);
-  border: 1px solid var(--glassBorder);
-  box-shadow: var(--glassShadow);
+
   padding: 5px;
   border-radius: 15px;
 }
@@ -620,11 +608,7 @@ button.active {
   position: relative;
   font-size: 0.75rem;
   font-weight: 00;
-  background: var(--riskGlass);
-  backdrop-filter: blur(--globalBlur);
-  -webkit-backdrop-filter: blur(--globalBlur);
-  border: 1px solid var(--glassBorder);
-  box-shadow: var(--glassShadow);
+
   padding: 12px 15px;
   border-radius: 10px;
   width: 210px;
@@ -633,7 +617,7 @@ button.active {
   align-items: center;
   justify-content: center;
   display: flex;
-  color: white;
+
 }
 
   
