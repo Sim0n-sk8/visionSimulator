@@ -532,7 +532,7 @@ button.active {
   width: 450px;
 
   border-radius: 15px;
-  padding: 10px;
+  padding: 15px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -542,11 +542,11 @@ button.active {
 .sliderNumbers {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .number {
-  font-size: 10px;
+  font-size: 15px;
   font-weight: bold;
   color: var(--colorText);
   transition: all 0.3s ease;
@@ -569,7 +569,7 @@ button.active {
     z-index: 10 !important;
   }
 
-  .sliderHint {
+.sliderHint {
   position: relative;
   font-size: 1rem;
   font-weight: 600;
@@ -638,32 +638,14 @@ button.active {
 button {
 
   border-radius: 15px;
-  color: var(--colorText);
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   padding: 10px 20px;
   text-align: center;
-  transition: all 0.2s ease;
+
   z-index: 101;
 }
-
-button:hover {
-  background: var(--buttonGlassHover);
-  border-color: var(--sliderThumbBorder);
-  transform: scale(1.02);
-  box-shadow: 0 3px 10px var(--numberShadow);
-}
-
-button:active,
-button.active {
-  background: var(--buttonGlassActive);
-  border: 2px solid var(--colorBorderActive);
-  color: var(--colorText);
-  transform: scale(1);
-  box-shadow: 0 2px 6px var(--sliderShadowInset);
-}
-
 
 }
