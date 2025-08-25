@@ -516,17 +516,13 @@ button.active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--colorGradientHint);
-  backdrop-filter: blur(--globalBlur);
-  -webkit-backdrop-filter: blur(--globalBlur);
-  border: 1px solid var(--glassBorder);
-  box-shadow: var(--glassShadow);
+
   padding: 5px;
   border-radius: 20px;
 }
 
 .sliderWord{
-  color: var(--colorText);
+
   text-align: center;
   padding-bottom: 15px;
 }
@@ -620,6 +616,54 @@ button.active {
 
 }
 
-  
+
+
+.buttonGroup {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 100;
+  display: flex;
+  gap: 12px;
+
+  padding: 5px;
+  border-radius: 20px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.buttonGroup:active {
+  transform: scale(0.6) !important;
+}
+
+button {
+
+  border-radius: 15px;
+  color: var(--colorText);
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+  z-index: 101;
+}
+
+button:hover {
+  background: var(--buttonGlassHover);
+  border-color: var(--sliderThumbBorder);
+  transform: scale(1.02);
+  box-shadow: 0 3px 10px var(--numberShadow);
+}
+
+button:active,
+button.active {
+  background: var(--buttonGlassActive);
+  border: 2px solid var(--colorBorderActive);
+  color: var(--colorText);
+  transform: scale(1);
+  box-shadow: 0 2px 6px var(--sliderShadowInset);
+}
+
 
 }
