@@ -79,6 +79,8 @@ const MyopiaSimulator = () => {
           content="Interactive myopia simulator with real-time visual feedback."
         />
         <link rel="icon" href="/favicon.ico" />
+
+        
       </Head>
 
       <div>

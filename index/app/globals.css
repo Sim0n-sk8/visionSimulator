@@ -1,6 +1,8 @@
 /* ============================================
    ROOT VARIABLES
 ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 @import './roots.css';
 
 
@@ -12,7 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 
@@ -71,7 +73,7 @@ button {
   border-radius: 15px;
   color: var(--colorText);
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
+
   font-size: 1rem;
   font-weight: 600;
   padding: 10px 20px;
@@ -636,7 +638,7 @@ button {
 
   border-radius: 15px;
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
+
   font-size: 1rem;
   font-weight: 600;
   padding: 10px 20px;
