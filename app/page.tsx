@@ -1,74 +1,29 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
 
-
 const MyopiaSimulator = () => {
-  // Define all possible scene keys
-  type SceneKey = 's' | 'r' | 'o' | 'a' | 'b' | 'd';
+  type SceneKey = 'c' | 's' | 'o';
 
-  // useState declarations:
-  const [currentScene, setCurrentScene] = useState<SceneKey>('s');
+  const [currentScene, setCurrentScene] = useState<SceneKey>('c');
   const [sliderValue, setSliderValue] = useState(0);
   const [showHint, setShowHint] = useState(true);
-  const [isTablet, setIsTablet] = useState(false);
 
-  // Array for slider ticks from 0 to 10
   const sliderRange = Array.from({ length: 11 }, (_, i) => i);
 
-  // Map each scene key to the image prefix in /assets/
   const imagePrefix: Record<SceneKey, string> = {
-    s: 'sim',
-    r: 'road',
+    c: 'sim',
+    s: 'street',
     o: 'outdoor',
-    a: 'alpha',
-    b: 'beta',
-    d: 'delta',
   };
 
-  // Looks for screen width to handle scene chang from desktop to mobile
-  useEffect(() => {
-    const handleResize = () => {
-      const tablet = window.innerWidth <= 800;
-      setIsTablet(tablet);
-
-      setCurrentScene((prev) => {
-        if (tablet) {
-          // Map desktop scenes to mobile scenes
-          if (prev === 's') return 'a';
-          if (prev === 'r') return 'b';
-
-          return prev;
-        } else {
-          // Map mobile scenes back to desktop scenes
-          if (prev === 'a') return 's';
-          if (prev === 'b') return 'r';
-
-          return prev;
-        }
-      });
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Handler to change scene when a button is clicked.
-  // It maps desktop scenes to mobile scenes when in mobile mode.
   const handleSceneChange = (scene: SceneKey) => {
-    if (isTablet) {
-      if (scene === 's') scene = 'a';
-      if (scene === 'r') scene = 'b';
- 
-    }
     setCurrentScene(scene);
   };
 
   return (
     <>
-     
       <Head>
         <title>Myopia Simulator</title>
         <meta charSet="UTF-8" />
@@ -79,69 +34,52 @@ const MyopiaSimulator = () => {
           content="Interactive myopia simulator with real-time visual feedback."
         />
         <link rel="icon" href="/favicon.ico" />
-
-        
       </Head>
 
       <div>
-        {/* Title section with logo */}
         <h1 className="title">
           <img src="/assets/logo.png" className="titleImg" alt="Logo" />
         </h1>
 
+        {showHint && (
+          <div className="hintContainer">
+            <div className="sliderHint">
+              Use the slider to show different amounts of blur caused by myopia
+            </div>
+          </div>
+        )}
 
-        {/* Hint text shown initially */}
-            {showHint && <div className="hintContainer"><div className="sliderHint">Use the slider to show different amounts of blur caused by myopia</div></div>}
-
-        {/* Scene selection buttons */}
         <div className="buttonGroup">
-
-          {/* Classroom */}
           <button
-            className={`schoolBtn ${
-              currentScene === (isTablet ? 'a' : 's') ? 'active' : ''
-            }`}
-            onClick={() => handleSceneChange('s')}>
+            className={`schoolBtn ${currentScene === 'c' ? 'active' : ''}`}
+            onClick={() => handleSceneChange('c')}
+          >
             SCHOOL
           </button>
 
-             {/* Playground */}
           <button
-            className={`playBtn ${
-              currentScene === (isTablet ? 'd' : 'o') ? 'active' : ''
-            }`}
+            className={`playBtn ${currentScene === 'o' ? 'active' : ''}`}
             onClick={() => handleSceneChange('o')}
           >
             SPORT
           </button>
 
-          {/* Road */}
           <button
-            className={`roadBtn ${
-              currentScene === (isTablet ? 'b' : 'r') ? 'active' : ''
-            }`}
-            onClick={() => handleSceneChange('r')}
+            className={`roadBtn ${currentScene === 's' ? 'active' : ''}`}
+            onClick={() => handleSceneChange('s')}
           >
             STREET
           </button>
-
-         
         </div>
 
-        {/* Myopia risk level display */}
         <div className="riskContainer">
           <p className="risk">
             MYOPIA RISK LEVEL: {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
           </p>
         </div>
 
-        {/* Slider section */}
         <div className="slideCon">
           <div className="sliderContainer">
-
-            
-
-            {/* Slider numbers above the slider */}
             <div className="sliderNumbers">
               {sliderRange.map((num) => (
                 <span
@@ -153,7 +91,6 @@ const MyopiaSimulator = () => {
               ))}
             </div>
 
-            {/* Actual range input slider */}
             <input
               type="range"
               className="slider"
@@ -162,23 +99,19 @@ const MyopiaSimulator = () => {
               value={sliderValue}
               onChange={(e) => {
                 setSliderValue(parseInt(e.target.value));
-                if (showHint) setShowHint(false); // Hide hint once user interacts
+                if (showHint) setShowHint(false);
               }}
             />
           </div>
         </div>
 
-        {/* Image display container */}
-        {/* Loops through all scene keys and slider values, showing only
-            the currently active scene and slider value image */}
-
-
-        {(['s', 'r', 'o', 'a', 'b', 'd'] as SceneKey[]).map((sceneKey) => (
+        {/* Correct image rendering for sliding */}
+        {(['c', 's', 'o'] as SceneKey[]).map((sceneKey) => (
           <div key={sceneKey} className="fullscreenImg">
             {sliderRange.map((val) => (
               <img
                 key={`${sceneKey}${val}`}
-                src={`/assets/${imagePrefix[sceneKey]}${val}.png`}
+                src={`/assets/${imagePrefix[sceneKey]}${val}.jpg`}
                 alt={`Myopia ${val}`}
                 style={{
                   display:
@@ -194,6 +127,3 @@ const MyopiaSimulator = () => {
 };
 
 export default MyopiaSimulator;
-
-
-
