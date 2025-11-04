@@ -6,7 +6,7 @@ import Head from 'next/head';
 
 const MyopiaSimulator = () => {
   // Define all possible scene keys
-  type SceneKey = 's' | 'r' | 'p' | 'a' | 'b' | 'd';
+  type SceneKey = 's' | 'r' | 'o' | 'a' | 'b' | 'd';
 
   // useState declarations:
   const [currentScene, setCurrentScene] = useState<SceneKey>('s');
@@ -21,7 +21,7 @@ const MyopiaSimulator = () => {
   const imagePrefix: Record<SceneKey, string> = {
     s: 'sim',
     r: 'road',
-    p: 'play',
+    o: 'outdoor',
     a: 'alpha',
     b: 'beta',
     d: 'delta',
@@ -38,13 +38,13 @@ const MyopiaSimulator = () => {
           // Map desktop scenes to mobile scenes
           if (prev === 's') return 'a';
           if (prev === 'r') return 'b';
-          if (prev === 'p') return 'd';
+
           return prev;
         } else {
           // Map mobile scenes back to desktop scenes
           if (prev === 'a') return 's';
           if (prev === 'b') return 'r';
-          if (prev === 'd') return 'p';
+
           return prev;
         }
       });
@@ -61,7 +61,7 @@ const MyopiaSimulator = () => {
     if (isTablet) {
       if (scene === 's') scene = 'a';
       if (scene === 'r') scene = 'b';
-      if (scene === 'p') scene = 'd';
+ 
     }
     setCurrentScene(scene);
   };
@@ -108,9 +108,9 @@ const MyopiaSimulator = () => {
              {/* Playground */}
           <button
             className={`playBtn ${
-              currentScene === (isTablet ? 'd' : 'p') ? 'active' : ''
+              currentScene === (isTablet ? 'd' : 'o') ? 'active' : ''
             }`}
-            onClick={() => handleSceneChange('p')}
+            onClick={() => handleSceneChange('o')}
           >
             SPORT
           </button>
@@ -173,12 +173,12 @@ const MyopiaSimulator = () => {
             the currently active scene and slider value image */}
 
 
-        {(['s', 'r', 'p', 'a', 'b', 'd'] as SceneKey[]).map((sceneKey) => (
+        {(['s', 'r', 'o', 'a', 'b', 'd'] as SceneKey[]).map((sceneKey) => (
           <div key={sceneKey} className="fullscreenImg">
             {sliderRange.map((val) => (
               <img
                 key={`${sceneKey}${val}`}
-                src={`/assets/${imagePrefix[sceneKey]}${val}.webp`}
+                src={`/assets/${imagePrefix[sceneKey]}${val}.png`}
                 alt={`Myopia ${val}`}
                 style={{
                   display:
