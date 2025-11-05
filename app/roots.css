@@ -64,7 +64,7 @@
 
 
 /*New Look*/
- /* :root {
+ :root {
   --colorText: #ffffff !important;
   --colorBorderActive: #ffffff22 !important;
   --colorGradientHint: rgba(50, 80, 130, 0.72) !important;
@@ -92,7 +92,7 @@
   --sliderContainerGlass: rgba(255, 255, 255, 0.12) !important;
   --hintShadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
   --globalBlur: 10.7px !important;
-}  */
+} 
 
 /* :root {
   --colorText: #ffffff !important;
@@ -124,7 +124,7 @@
   --globalBlur: 10.7px !important;
 } */
 
-:root {
+/* :root {
   --colorText: #ffffff !important;
   --colorBorderActive: rgba(255, 120, 220, 0.45) !important;
   --colorGradientHint: rgba(255, 70, 180, 0.78) !important;
@@ -152,5 +152,5 @@
   --sliderContainerGlass: rgba(255, 220, 250, 0.15) !important;
   --hintShadow: 0 4px 30px rgba(80, 0, 60, 0.3) !important;
   --globalBlur: 10.7px !important;
-}
+} */
 
