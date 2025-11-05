@@ -101,41 +101,33 @@ button.active {
    RISK CONTAINER
 ============================================ */
 
-.riskContainer {
-  position: fixed;
-  bottom: 130px;
-  right: 210px;
-  z-index: 100;
-  display: flex;
-  gap: 12px;
-  background: var(--colorGradientHint);
-  backdrop-filter: blur(--globalBlur);
-  -webkit-backdrop-filter: blur(--globalBlur);
-  border: 1px solid var(--glassBorder);
-  box-shadow: var(--glassShadow);
-  padding: 5px;
-  border-radius: 15px;
-}
-
 .risk {
-  position: relative;
-  font-size: 0.75rem;
-  font-weight: 700;
-  background: var(--riskGlass);
-  backdrop-filter: blur(--globalBlur);
-  -webkit-backdrop-filter: blur(--globalBlur);
-  border: 1px solid var(--glassBorder);
-  box-shadow: var(--glassShadow);
-  padding: 12px 15px;
-  border-radius: 10px;
-  width: 210px;
-  box-sizing: border-box;
+  position: fixed;
+  bottom: 110px;
+  right: 115px;
   z-index: 1000;
+  
+  font-size: 1rem;
+  font-weight: 700;
+
+  background: var(--ani3);
+  backdrop-filter: blur(var(--globalBlur));
+  -webkit-backdrop-filter: blur(var(--globalBlur));
+  border: 2px solid var(--glassBorder);
+  box-shadow: var(--glassShadow);
+  padding: 7px ;
+  border-radius: 3px;
+
+  width: 250px;
+  box-sizing: border-box;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
   color: white;
 }
+
+
 
 /* ============================================
    SLIDER COMPONENTS
@@ -183,11 +175,11 @@ button.active {
 .sliderNumbers {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .number {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: var(--colorText);
   transition: all 0.3s ease;
@@ -221,6 +213,7 @@ button.active {
   outline: none;
   -webkit-appearance: none;
   appearance: none;
+   margin-top: 10px;
   backdrop-filter: blur(--globalBlur);
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--sliderBorderGlass);
@@ -247,15 +240,11 @@ button.active {
   appearance: none;
   width: 30px;
   height: 30px;
-  
- 
   background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
-
   backdrop-filter: blur(--globalBlur);
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 2px solid var(--sliderThumbBorder);
   box-shadow: 0 2px 8px var(--sliderThumbShadow);
-    
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -300,46 +289,39 @@ button.active {
    HINT STYLES
 ============================================ */
 
-.hintContainer {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  z-index: 100;
-  display: flex;
-  gap: 12px;
-  background: var(--colorGradientHint);
-  backdrop-filter: blur(--globalBlur);
-  -webkit-backdrop-filter: blur(--globalBlur);
-  border: 1px solid var(--glassBorder);
-  box-shadow: var(--glassShadow);
-    
-  padding: 5px;
-  border-radius: 25px;
-}
-
 .sliderHint {
-  position: relative;
-  font-size: 1.4rem;
-  font-weight: 600;
-  background: var(--riskGlass);
-  backdrop-filter: blur(--globalBlur);
-  -webkit-backdrop-filter: blur(--globalBlur);
-  border: 1px solid var(--glassBorder);
-  box-shadow: var(--glassShadow);
-  padding: 14px 20px;
-  border-radius: 20px;
-  max-width: 100%;
-  box-sizing: border-box;
-  z-index: 1000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) ;
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
-  color: var(--colorText);
+  padding: 14px 20px;
+  font-size: 3rem;
+  font-weight: 600;
+  color: white; /* text color on top of animated blob */
+  border-radius: 10px;
+  overflow: hidden; /* ensures SVG stays behind text */
+  z-index: 100;
+  background-color: var(--colorHint);
   text-align: center;
-  line-height: 1.4;
-  letter-spacing: 0.5px;
+  
 }
+.sliderHint svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.sliderHint span {
+  position: relative; /* on top of the SVG */
+  z-index: 1;
+  
+}
+
+
 
 .sliderHint.fadeOut {
   opacity: 0;
@@ -412,17 +394,7 @@ button.active {
     transform-origin: center !important;
     width: 340px !important;
     height: 12px !important;
-    background: linear-gradient(to right, 
-      #5ca6dc 0%, 
-      #5ca6dc 20%, 
-      #7cc7fd 20%, 
-      #7cc7fd 40%, 
-      #5ca6dc 40%, 
-      #5ca6dc 60%, 
-      #7cc7fd 60%, 
-      #7cc7fd 80%, 
-      #5ca6dc 80%, 
-      #5ca6dc 100%);
+    
     border-radius: 12px;
     outline: none;
     margin: 5;

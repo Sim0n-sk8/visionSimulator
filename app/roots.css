@@ -1,24 +1,24 @@
-
-/*Original Blue*/
-
-/* :root {
+:root {
   --colorText: #ffffff !important;
-  --colorBorderActive: #ffffff22 !important;
-  --colorGradientHint: rgba(30, 83, 196, 0.72) !important;
-  --colorGradientHintRev: rgba(228, 219, 219, 0.288) !important;
+  --colorBorderActive: #ffffff41 !important;
+  --colorGradientHint: rgba(30, 83, 196, 0.858) !important; /* blue background */
+  --colorGradientHintRev: rgba(228, 219, 219, 0.288) !important; /* soft light */
   --glassHighlight: rgba(255, 255, 255, 0.08) !important;
   --glassBorder: rgba(32, 69, 128, 0.39) !important;
   --glassShadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-  --sliderBg1: rgba(92, 166, 220, 0.8) !important;
+
+  --sliderBg1: rgba(124, 199, 253, 0.8)!important;
   --sliderBg2: rgba(124, 199, 253, 0.8) !important;
   --sliderBorderGlass: rgba(255, 255, 255, 0.15) !important;
   --sliderThumbGradientStart: rgba(255, 255, 255, 0.9) !important;
   --sliderThumbGradientEnd: rgba(255, 255, 255, 0.7) !important;
   --sliderThumbBorder: rgba(255, 255, 255, 0.3) !important;
   --sliderThumbHoverBorder: rgba(255, 255, 255, 0.5) !important;
+
   --buttonGlassBase: rgba(255, 255, 255, 0.1) !important;
   --buttonGlassHover: rgba(255, 255, 255, 0.5) !important;
   --buttonGlassActive: rgba(255, 255, 255, 0.418) !important;
+
   --riskGlass: rgba(255, 255, 255, 0.288) !important;
   --numberActiveShadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   --numberShadow: rgba(0, 0, 0, 0.1) !important;
@@ -29,128 +29,15 @@
   --sliderContainerGlass: rgba(255, 255, 255, 0.15) !important;
   --hintShadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   --globalBlur: 10.7px !important;
-} */
 
-/* Grey*/
-/* :root {
-  --colorText: #ffffff !important;
-  --colorBorderActive: #ffffff22 !important;
-  --colorGradientHint: rgba(40, 60, 90, 0.72) !important;
-  --colorGradientHintRev: rgba(180, 190, 210, 0.25) !important;
-  --glassHighlight: rgba(255, 255, 255, 0.08) !important;
-  --glassBorder: rgba(45, 70, 110, 0.35) !important;
-  --glassShadow: 0 4px 30px rgba(0, 0, 0, 0.2) !important;
-  --sliderBg1: rgba(70, 90, 120, 0.8) !important;
-  --sliderBg2: rgba(100, 130, 160, 0.8) !important;
-  --sliderBorderGlass: rgba(255, 255, 255, 0.15) !important;
-  --sliderThumbGradientStart: rgba(255, 255, 255, 0.9) !important;
-  --sliderThumbGradientEnd: rgba(230, 235, 240, 0.7) !important;
-  --sliderThumbBorder: rgba(255, 255, 255, 0.25) !important;
-  --sliderThumbHoverBorder: rgba(255, 255, 255, 0.45) !important;
-  --buttonGlassBase: rgba(255, 255, 255, 0.1) !important;
-  --buttonGlassHover: rgba(255, 255, 255, 0.35) !important;
-  --buttonGlassActive: rgba(255, 255, 255, 0.3) !important;
-  --riskGlass: rgba(255, 255, 255, 0.22) !important;
-  --numberActiveShadow: 0 4px 30px rgba(0, 0, 0, 0.2) !important;
-  --numberShadow: rgba(0, 0, 0, 0.15) !important;
-  --sliderShadowInset: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
-  --sliderHighlight: rgba(255, 255, 255, 0.05) !important;
-  --sliderThumbShadow: rgba(0, 0, 0, 0.2) !important;
-  --sliderThumbHoverShadow: rgba(0, 0, 0, 0.25) !important;
-  --sliderContainerGlass: rgba(255, 255, 255, 0.12) !important;
-  --hintShadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
-  --globalBlur: 10.7px !important;
-} */
+/* Shades that pop but stay in the blue/cyan/purple family */
+--ani1: #4da6ff !important; /* vivid cyan-blue */
+--ani2: #3385ff !important; /* deeper cyan */
+--ani3: #6655ff !important; /* medium purple-blue */
+--ani4: #66e0ff !important; /* bright light aqua */
 
 
-/*New Look*/
- :root {
-  --colorText: #ffffff !important;
-  --colorBorderActive: #ffffff22 !important;
-  --colorGradientHint: rgba(50, 80, 130, 0.72) !important;
-  --colorGradientHintRev: rgba(200, 215, 230, 0.25) !important;
-  --glassHighlight: rgba(255, 255, 255, 0.08) !important;
-  --glassBorder: rgba(60, 95, 145, 0.35) !important;
-  --glassShadow: 0 4px 30px rgba(0, 0, 0, 0.25) !important;
-  --sliderBg1: rgba(80, 110, 160, 0.8) !important;
-  --sliderBg2: rgba(120, 150, 190, 0.8) !important;
-  --sliderBorderGlass: rgba(255, 255, 255, 0.18) !important;
-  --sliderThumbGradientStart: rgba(255, 255, 255, 0.9) !important;
-  --sliderThumbGradientEnd: rgba(230, 240, 255, 0.7) !important;
-  --sliderThumbBorder: rgba(255, 255, 255, 0.25) !important;
-  --sliderThumbHoverBorder: rgba(255, 255, 255, 0.45) !important;
-  --buttonGlassBase: rgba(255, 255, 255, 0.1) !important;
-  --buttonGlassHover: rgba(255, 255, 255, 0.35) !important;
-  --buttonGlassActive: rgba(255, 255, 255, 0.3) !important;
-  --riskGlass: rgba(255, 255, 255, 0.22) !important;
-  --numberActiveShadow: 0 4px 30px rgba(0, 0, 0, 0.2) !important;
-  --numberShadow: rgba(0, 0, 0, 0.15) !important;
-  --sliderShadowInset: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
-  --sliderHighlight: rgba(255, 255, 255, 0.05) !important;
-  --sliderThumbShadow: rgba(0, 0, 0, 0.2) !important;
-  --sliderThumbHoverShadow: rgba(0, 0, 0, 0.25) !important;
-  --sliderContainerGlass: rgba(255, 255, 255, 0.12) !important;
-  --hintShadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
-  --globalBlur: 10.7px !important;
-} 
+  /* Hint text contrasting background */
+  --colorHint: rgba(30, 120, 200, 0.7) !important; /* semi-transparent cyan-blue */
 
-/* :root {
-  --colorText: #ffffff !important;
-  --colorBorderActive: rgba(180, 200, 255, 0.35) !important;
-  --colorGradientHint: rgba(60, 100, 160, 0.78) !important;
-  --colorGradientHintRev: rgba(220, 235, 255, 0.3) !important;
-  --glassHighlight: rgba(255, 255, 255, 0.12) !important;
-  --glassBorder: rgba(150, 180, 230, 0.45) !important;
-  --glassShadow: 0 4px 30px rgba(10, 20, 40, 0.25) !important;
-  --sliderBg1: rgba(80, 110, 160, 0.85) !important;
-  --sliderBg2: rgba(130, 160, 200, 0.85) !important;
-  --sliderBorderGlass: rgba(200, 220, 255, 0.25) !important;
-  --sliderThumbGradientStart: rgba(255, 255, 255, 0.95) !important;
-  --sliderThumbGradientEnd: rgba(220, 235, 255, 0.8) !important;
-  --sliderThumbBorder: rgba(200, 220, 255, 0.45) !important;
-  --sliderThumbHoverBorder: rgba(220, 240, 255, 0.6) !important;
-  --buttonGlassBase: rgba(255, 255, 255, 0.12) !important;
-  --buttonGlassHover: rgba(240, 250, 255, 0.4) !important;
-  --buttonGlassActive: rgba(220, 235, 255, 0.3) !important;
-  --riskGlass: rgba(200, 220, 255, 0.25) !important;
-  --numberActiveShadow: 0 4px 30px rgba(15, 25, 45, 0.25) !important;
-  --numberShadow: rgba(0, 0, 0, 0.18) !important;
-  --sliderShadowInset: 0 4px 30px rgba(15, 25, 45, 0.2) !important;
-  --sliderHighlight: rgba(255, 255, 255, 0.07) !important;
-  --sliderThumbShadow: rgba(10, 20, 40, 0.25) !important;
-  --sliderThumbHoverShadow: rgba(15, 30, 60, 0.3) !important;
-  --sliderContainerGlass: rgba(240, 245, 255, 0.15) !important;
-  --hintShadow: 0 4px 30px rgba(10, 20, 40, 0.25) !important;
-  --globalBlur: 10.7px !important;
-} */
-
-/* :root {
-  --colorText: #ffffff !important;
-  --colorBorderActive: rgba(255, 120, 220, 0.45) !important;
-  --colorGradientHint: rgba(255, 70, 180, 0.78) !important;
-  --colorGradientHintRev: rgba(255, 190, 240, 0.3) !important;
-  --glassHighlight: rgba(255, 255, 255, 0.15) !important;
-  --glassBorder: rgba(255, 100, 200, 0.55) !important;
-  --glassShadow: 0 4px 30px rgba(80, 0, 60, 0.35) !important;
-  --sliderBg1: rgba(255, 80, 190, 0.85) !important;
-  --sliderBg2: rgba(255, 130, 230, 0.85) !important;
-  --sliderBorderGlass: rgba(255, 200, 240, 0.25) !important;
-  --sliderThumbGradientStart: rgba(255, 255, 255, 0.95) !important;
-  --sliderThumbGradientEnd: rgba(255, 210, 245, 0.8) !important;
-  --sliderThumbBorder: rgba(255, 160, 230, 0.45) !important;
-  --sliderThumbHoverBorder: rgba(255, 210, 250, 0.6) !important;
-  --buttonGlassBase: rgba(255, 255, 255, 0.12) !important;
-  --buttonGlassHover: rgba(255, 180, 230, 0.45) !important;
-  --buttonGlassActive: rgba(255, 160, 220, 0.35) !important;
-  --riskGlass: rgba(255, 200, 240, 0.25) !important;
-  --numberActiveShadow: 0 4px 30px rgba(80, 0, 60, 0.35) !important;
-  --numberShadow: rgba(0, 0, 0, 0.2) !important;
-  --sliderShadowInset: 0 4px 30px rgba(80, 0, 60, 0.25) !important;
-  --sliderHighlight: rgba(255, 255, 255, 0.08) !important;
-  --sliderThumbShadow: rgba(80, 0, 60, 0.25) !important;
-  --sliderThumbHoverShadow: rgba(100, 0, 80, 0.3) !important;
-  --sliderContainerGlass: rgba(255, 220, 250, 0.15) !important;
-  --hintShadow: 0 4px 30px rgba(80, 0, 60, 0.3) !important;
-  --globalBlur: 10.7px !important;
-} */
-
+}
