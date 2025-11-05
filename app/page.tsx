@@ -37,9 +37,7 @@ const MyopiaSimulator = () => {
       </Head>
 
       <div>
-        <h1 className="title">
-          <img src="/assets/logo.png" className="titleImg" alt="Logo" />
-        </h1>
+        
 
  {showHint && (
   <div className="sliderHint">
