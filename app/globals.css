@@ -466,7 +466,7 @@ button.active {
     transform-origin: bottom right;
   }
   
-  .riskContainer {
+  .risk {
     transform: scale(0.7);
     transform-origin: bottom right;
   }
@@ -476,15 +476,15 @@ button.active {
     transform-origin: top right;
   }
   
-  .hintContainer {
+  .sliderHint {
     transform: scale(0.6);
     transform-origin: top left;
   }
 
 .slideCon {
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -503,23 +503,23 @@ button.active {
 .sliderContainer {
   position: relative;
   width: 450px;
-
+height:90px;
   border-radius: 15px;
-  padding: 15px;
-  padding-bottom: 20px;
+
+  padding: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   flex-shrink: 0;
 }
 
 .sliderNumbers {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 
 .number {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   color: var(--colorText);
   transition: all 0.3s ease;
@@ -529,13 +529,13 @@ button.active {
 }
 
  
-.hintContainer {
+.sliderHint {
     position: fixed !important;
-    top: 150px !important;
-    left: 250px !important;
+    top: 80px !important;
+    left: 50px !important;
     height: fit-content;
-    font-size: 1rem !important;
-    max-width: 50% !important;
+    font-size: 3rem !important;
+    max-width: 80% !important;
     text-align: center !important;
     color: var(--colorText) !important;
     pointer-events: none !important;
@@ -561,29 +561,22 @@ button.active {
   letter-spacing: 0.5px;
 }
   
-.riskContainer {
-  position: fixed;
-  bottom: 90px;
-  right: 10px;
-  z-index: 100;
-  display: flex;
-  gap: 10px;
-  padding: 5px;
-  border-radius: 15px;
-}
+
 
 .risk {
-  position: relative;
-  font-size: 0.75rem;
+  position: fixed;
+  font-size: 1rem;
   font-weight: 00;
   padding: 12px 15px;
   border-radius: 10px;
-  width: 210px;
+  width: 250px;
   box-sizing: border-box;
   z-index: 1000;
   align-items: center;
   justify-content: center;
   display: flex;
+  bottom: 80px;
+  right: 100px;
 
 }
 
@@ -592,7 +585,7 @@ button.active {
 .buttonGroup {
   position: fixed;
   top: 10px;
-  right: 5px;
+  right: 20px;
   z-index: 100;
   display: flex;
   gap: 12px;
@@ -610,7 +603,7 @@ button {
   border-radius: 15px;
   cursor: pointer;
 
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   padding: 10px 20px;
   text-align: center;
