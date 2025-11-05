@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: 'Myopia Simulator',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: 'https://s3.eu-west-2.amazonaws.com/luminablue-blogs/uploads/metaimgVisionSim.png', width: 1200, height: 630, alt: 'Preview of Myopia Simulator' }],
+    images: [{ url: '	https://myopia-simulator.vercel.app/assets/metaimgVisionSim.png', width: 1200, height: 630, alt: 'Preview of Myopia Simulator' }],
   },
 
   robots: 'index, follow',
