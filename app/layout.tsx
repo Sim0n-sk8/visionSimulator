@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/*Hello fellow code enthusiasts! Its a great big world out there so remember to go live. Also stay hydrated ~Simon*/}
+        {/*Hello fellow code enthusiasts! Its a great big world out there so remember to go outside every now and then. Also stay hydrated ~Simon*/}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
