@@ -55,7 +55,7 @@
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
   padding: 5px;
-  border-radius: 20px;
+  border-radius: 15px;
   transition: transform 0.1s ease-in-out;
 }
 
@@ -69,11 +69,11 @@ button {
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: 0 2px 8px var(--sliderShadowInset);
-  border-radius: 15px;
+  border-radius: 10px;
   color: var(--colorText);
   cursor: pointer;
 
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   padding: 10px 20px;
   text-align: center;
@@ -104,10 +104,10 @@ button.active {
 .risk {
   position: fixed;
   bottom: 110px;
-  right: 115px;
+  right: 85px;
   z-index: 1000;
   
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
 
   background: var(--ani3);
@@ -118,7 +118,7 @@ button.active {
   padding: 7px ;
   border-radius: 3px;
 
-  width: 250px;
+  width: 300px;
   box-sizing: border-box;
 
   display: flex;
@@ -147,7 +147,7 @@ button.active {
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
   padding: 5px;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .sliderWord{
@@ -164,7 +164,7 @@ button.active {
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 15px;
   padding-bottom: 20px;
   display: flex;
@@ -179,7 +179,7 @@ button.active {
 }
 
 .number {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   color: var(--colorText);
   transition: all 0.3s ease;
