@@ -30,14 +30,13 @@
   --hintShadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   --globalBlur: 10.7px !important;
 
-/* Shades that pop but stay in the blue/cyan/purple family */
---ani1: #4da6ff !important; /* vivid cyan-blue */
---ani2: #3385ff !important; /* deeper cyan */
---ani3: rgb(30, 83, 196) !important; /* medium purple-blue */
---ani4: #66e0ff !important; /* bright light aqua */
+
+--ani1: #4da6ff !important; 
+--ani2: #3385ff !important; 
+--ani3: rgb(30, 83, 196) !important; 
+--ani4: #66e0ff !important; 
 
 
-  /* Hint text contrasting background */
-  --colorHint: rgba(30, 120, 200, 0.7) !important; /* semi-transparent cyan-blue */
+  --colorHint: rgba(30, 120, 200, 0.7) !important;
 
 }
