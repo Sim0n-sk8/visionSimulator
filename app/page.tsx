@@ -81,7 +81,7 @@ const MyopiaSimulator = () => {
       </g>
     </svg>
 
-    <span>Use the slider to show different amounts of blur caused by myopia</span>
+    <span>Use the <b>slider</b> to show different amounts of blur caused by myopia</span>
   </div>
 )}
 
@@ -111,7 +111,8 @@ const MyopiaSimulator = () => {
         </div>
 
       <p className="risk">
-  MYOPIA RISK LEVEL: {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
+  <b>MYOPIA</b>&nbsp;RISK LEVEL: 
+ {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
 </p>
 
 

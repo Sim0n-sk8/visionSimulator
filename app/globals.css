@@ -108,14 +108,14 @@ button.active {
   z-index: 1000;
   
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
 
   background: var(--ani3);
   backdrop-filter: blur(var(--globalBlur));
   -webkit-backdrop-filter: blur(var(--globalBlur));
   border: 2px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
-  padding: 5px ;
+  padding: 10px ;
   border-radius: 3px;
 
   width: 300px;
@@ -297,16 +297,16 @@ button.active {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 20px;
-  font-size: 3rem;
-  font-weight: 600;
+  padding: 14px 30px;
+  font-size: 2.2rem;
+  font-weight: 500;
   color: white; /* text color on top of animated blob */
   border-radius: 10px;
   overflow: hidden; /* ensures SVG stays behind text */
   z-index: 100;
   background-color: var(--colorHint);
   text-align: center;
-  width: 1000px;
+  width: 650px;
 
 
 
