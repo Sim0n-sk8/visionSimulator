@@ -33,7 +33,7 @@
 /* Shades that pop but stay in the blue/cyan/purple family */
 --ani1: #4da6ff !important; /* vivid cyan-blue */
 --ani2: #3385ff !important; /* deeper cyan */
---ani3: #6655ff !important; /* medium purple-blue */
+--ani3: rgb(30, 83, 196) !important; /* medium purple-blue */
 --ani4: #66e0ff !important; /* bright light aqua */
 
 
