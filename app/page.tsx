@@ -13,7 +13,7 @@ const MyopiaSimulator = () => {
   const sliderRange = Array.from({ length: 11 }, (_, i) => i);
 
   const imagePrefix: Record<SceneKey, string> = {
-    c: 'sim',
+    c: 'class',
     s: 'street',
     o: 'outdoor',
   };
