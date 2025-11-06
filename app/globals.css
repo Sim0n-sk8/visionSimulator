@@ -452,6 +452,123 @@ button.active {
   }
 }
 
+@media (max-width: 650px) {
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .buttonGroup {
+    position: fixed !important;
+    top: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    border-radius: 15px !important;
+    padding: 5px !important;
+    width: fit-content !important;
+  }
+
+  button {
+    font-size: 1rem !important;
+    padding: 6px 12px !important;
+    border-radius: 10px !important;
+  }
+
+  .slideCon {
+    position: absolute !important;
+    bottom: 30% !important;
+    margin-right: -15px !important;
+    transform: translateY(50%) !important;
+    z-index: 100 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+    width: fit-content !important;
+  }
+
+  .sliderContainer {
+    width: 90px !important;
+    height: 360px !important;
+    padding: 10px !important;
+    margin: 0 !important;
+    border-radius: 10px !important;
+    
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2px !important;
+    overflow: visible !important;
+  }
+
+  .slider {
+    transform: rotate(-90deg) !important;
+    transform-origin: center !important;
+    width: 340px !important;
+    height: 12px !important;
+    
+    border-radius: 12px;
+    outline: none;
+    margin: 5;
+    appearance: none;
+  
+    
+    flex-shrink: 0 !important;
+  }
+
+  .sliderNumbers {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    justify-content: space-between !important;
+    height: 335px !important;
+    margin: 0 !important;
+    margin-right: 10px !important;
+    transform: translateX(160px) !important;
+  }
+
+
+
+  .risk {
+    width: 100%;
+    max-width: 230px;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 5px;
+    position: fixed !important;
+    top: 75px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 99;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .sliderHint {
+    position: fixed !important;
+    top: 65% !important;
+    left: 35% !important;
+    height: fit-content;
+    font-size: 2rem !important;
+    width: 55% !important;
+    text-align: center !important;
+    
+    pointer-events: none !important;
+    z-index: 10 !important;
+  }
+}
+
 @media (max-height: 670px) and (max-width: 480px) {
   .slideCon {
     bottom: 220px !important;
