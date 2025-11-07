@@ -1,19 +1,32 @@
 /* ============================================
    ROOT VARIABLES
 ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import './roots.css';
 
 
 /* ============================================
-   GLOBAL RESET
+   GLOBAL RESET/ MISC
 ============================================ */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  width: 45px;
+  background-color: rgba(255, 255, 255, 0.634);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 
@@ -104,23 +117,19 @@ button.active {
 .risk {
   position: fixed;
   bottom: 115px;
-  right: 85px;
+  right: 80px;
   z-index: 1000;
-  
   font-size: 1.1rem;
   font-weight: 500;
-
-  background: var(--ani3);
+  background: var(--riskColor);
   backdrop-filter: blur(var(--globalBlur));
   -webkit-backdrop-filter: blur(var(--globalBlur));
   border: 2px solid var(--glassBorder);
   box-shadow: var(--glassShadow);
   padding: 10px ;
   border-radius: 3px;
-
   width: 300px;
   box-sizing: border-box;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -293,43 +302,101 @@ button.active {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) ;
+  transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* keep text at top */
   align-items: center;
-  justify-content: center;
-  padding: 14px 30px;
-  font-size: 2.2rem;
-  font-weight: 500;
-  color: white; /* text color on top of animated blob */
-  border-radius: 10px;
-  overflow: hidden; /* ensures SVG stays behind text */
+  padding: 10px 30px 60px; 
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
   z-index: 100;
   background-color: var(--colorHint);
   text-align: center;
   width: 650px;
-
-
-
-  
+  height: 170px;
+  border: 2px solid rgba(255, 255, 255, 0.634);
 }
-.sliderHint svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+
+/* Top content */
 .sliderHint span {
-  position: relative; /* on top of the SVG */
-  z-index: 1;
+  width: 100%;
+}
+
+.sliderHint .main {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.sliderHint .second {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.9;
+  line-height: 1.4;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+
+
+
+/* Credits bottom-right */
+/* .sliderHint .credits {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.sliderHint .credit-text {
+  font-size: 0.5rem;
+  opacity: 0.8;
+  margin-bottom: 5px;
+  margin-right: 65px;
+}
+
+.sliderHint .logo {
+  width: 105px;
+  opacity: 0.9;
+  display: flex;
+align-items: center;
+} */
+
+/* Credits bottom-center */
+.sliderHint .credits {
+  position: absolute;
+  bottom: 8px;
+  left: 50%; /* move the left edge to the center */
+  transform: translateX(-50%); /* shift back by 50% of its own width to truly center */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center contents horizontally */
+  text-align: center;
+}
+
+.sliderHint .credit-text {
+  font-size: 0.5rem;
+  opacity: 0.8;
+  margin-bottom: 5px;
+  margin-right: 0; /* remove the previous 65px offset */
+}
+
+.sliderHint .logo {
+  width: 115px;
   
+  display: flex;
+  align-items: center;
 }
 
 
 
-.sliderHint.fadeOut {
-  opacity: 0;
-}
+
+
 
 /* ============================================
    MOBILE RESPONSIVE STYLES
@@ -348,7 +415,7 @@ button.active {
   .buttonGroup {
     position: fixed !important;
     top: 20px !important;
-    left: 50% !important;
+    left: 45% !important;
     transform: translateX(-50%) !important;
     z-index: 1000 !important;
     display: flex !important;
@@ -398,13 +465,10 @@ button.active {
     transform-origin: center !important;
     width: 340px !important;
     height: 12px !important;
-    
     border-radius: 12px;
     outline: none;
     margin: 5;
     appearance: none;
-  
-    
     flex-shrink: 0 !important;
   }
 
@@ -441,7 +505,7 @@ button.active {
   .sliderHint {
     position: fixed !important;
     top: 65% !important;
-    left: 35% !important;
+    left: 30% !important;
     height: fit-content;
     font-size: 2rem !important;
     width: 55% !important;
@@ -515,13 +579,10 @@ button.active {
     transform-origin: center !important;
     width: 340px !important;
     height: 12px !important;
-    
     border-radius: 12px;
     outline: none;
     margin: 5;
     appearance: none;
-  
-    
     flex-shrink: 0 !important;
   }
 
@@ -537,10 +598,11 @@ button.active {
 
 
 
-  .risk {
+  /* .risk {
     width: 100%;
-    max-width: 230px;
-    font-size: 1rem;
+    max-width: 240px;
+     font-size: 0.7rem;
+    font-weight: 500; 
     border-radius: 8px;
     padding: 5px;
     position: fixed !important;
@@ -553,182 +615,50 @@ button.active {
     justify-content: center;
     align-items: center;
     padding: 5px;
-  }
+  } */
+
+  .risk {
+    position: fixed;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+
+    width: 100%;
+    max-width: 240px;
+    height: fit-content;
+
+    font-size: 0.7rem;
+    font-weight: 500; /* ensure valid weight */
+    color: white;
+
+    background-color: var(--riskColor); /* keep the same background */
+    border-radius: 8px;
+    padding: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
   .sliderHint {
-    position: fixed !important;
+    position: block !important;
     top: 65% !important;
-    left: 35% !important;
+    left: 32% !important;
     height: fit-content;
     font-size: 2rem !important;
     width: 55% !important;
     text-align: center !important;
-    
     pointer-events: none !important;
     z-index: 10 !important;
   }
 }
 
-@media (max-height: 670px) and (max-width: 480px) {
-  .slideCon {
-    bottom: 220px !important;
-  }
-}
-
-
-@media only screen and (max-width: 900px) and (orientation: landscape) and (max-height: 600px), 
-   only screen and (max-width: 900px) and (orientation: landscape) and (max-device-aspect-ratio: 4/3) {
-  .slideCon {
-    transform: scale(0.7);
-    transform-origin: bottom right;
-  }
-  
-  .risk {
-    transform: scale(0.7);
-    transform-origin: bottom right;
-  }
-  
-  .buttonGroup {
-    transform: scale(0.7);
-    transform-origin: top right;
-  }
-  
-  .sliderHint {
-    transform: scale(0.6);
-    transform-origin: top left;
-  }
-
-.slideCon {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: 5px;
-  border-radius: 20px;
-}
-
-.sliderWord{
-
-  text-align: center;
-  padding-bottom: 15px;
-}
-
-.sliderContainer {
-  position: relative;
-  width: 450px;
-height:90px;
-  border-radius: 15px;
-
-  padding: 20px;
-  display: flex;
-  flex-direction: column-reverse;
-  flex-shrink: 0;
-}
-
-.sliderNumbers {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.number {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--colorText);
-  transition: all 0.3s ease;
-  min-width: 20px;
-  text-align: center;
-  text-shadow: 0 1px 2px var(--numberShadow);
-}
-
- 
-.sliderHint {
-    position: fixed !important;
-    top: 80px !important;
-    left: 50px !important;
-    height: fit-content;
-    font-size: 3rem !important;
-    max-width: 80% !important;
-    text-align: center !important;
-    color: var(--colorText) !important;
-    pointer-events: none !important;
-    z-index: 10 !important;
-  }
-
-.sliderHint {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 600;
-
-  padding: 14px 20px;
-  border-radius: 20px;
-  max-width: 100%;
-  box-sizing: border-box;
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-
-  text-align: center;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-}
-  
-
-
-.risk {
-  position: fixed;
-  font-size: 1rem;
-  font-weight: 00;
-  padding: 12px 15px;
-  border-radius: 10px;
-  width: 250px;
-  box-sizing: border-box;
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  bottom: 80px;
-  right: 100px;
-
-}
 
 
 
-.buttonGroup {
-  position: fixed;
-  top: 10px;
-  right: 20px;
-  z-index: 100;
-  display: flex;
-  gap: 12px;
-  padding: 5px;
-  border-radius: 20px;
-  transition: transform 0.1s ease-in-out;
-}
 
-.buttonGroup:active {
-  transform: scale(0.7) !important;
-}
-
-button {
-
-  border-radius: 15px;
-  cursor: pointer;
-
-  font-size: 1.3rem;
-  font-weight: 600;
-  padding: 10px 20px;
-  text-align: center;
-
-  z-index: 101;
-}
-
-}
 
 @media (min-width: 1300px) {
  .fullscreenImg img {

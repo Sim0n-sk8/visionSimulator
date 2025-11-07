@@ -36,8 +36,9 @@ const MyopiaSimulator = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+
       <div>
-        
+
 
  {showHint && (
   <div className="sliderHint">
@@ -60,10 +61,10 @@ const MyopiaSimulator = () => {
           @keyframes rotateOutBottom { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
           @keyframes rotateInBottom { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-          .out-top-g { animation: rotateOutTop 20s linear infinite; transform-origin: 13px 25px; }
-          .in-top-g { animation: rotateInTop 10s linear infinite; transform-origin: 13px 25px; }
-          .out-bottom-g { animation: rotateOutBottom 25s linear infinite; transform-origin: 84px 93px; }
-          .in-bottom-g { animation: rotateInBottom 15s linear infinite; transform-origin: 84px 93px; }
+          .out-top-g { animation: rotateOutTop 40s linear infinite; transform-origin: 13px 25px; }
+          .in-top-g { animation: rotateInTop 20s linear infinite; transform-origin: 13px 25px; }
+          .out-bottom-g { animation: rotateOutBottom 50s linear infinite; transform-origin: 84px 93px; }
+          .in-bottom-g { animation: rotateInBottom 30s linear infinite; transform-origin: 84px 93px; }
         `}
       </style>
 
@@ -81,11 +82,23 @@ const MyopiaSimulator = () => {
       </g>
     </svg>
 
-    <span>Use the <b>slider</b> to show different amounts of blur caused by myopia</span>
+     <span>
+    <b className="main">Myopia Vision Simulator</b>
+    <br />
+    <hr />
+    <div className="second">
+      Drag the <b>slider</b> to show different amounts of blur caused by myopia
+    </div>
+  </span>
+
+  <div className="credits">
+    <div className="credit-text">Created By</div>
+    <img src="assets/NCLogo.png" alt="NevadaCloud Logo" className="logo" />
+  </div>
   </div>
 )}
 
-  
+
 
         <div className="buttonGroup">
           <button
@@ -111,11 +124,12 @@ const MyopiaSimulator = () => {
         </div>
 
       <p className="risk">
-  <b>MYOPIA</b>&nbsp;RISK LEVEL: 
- {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
+<b>MYOPIA</b> RISK LEVEL:{" "}
+{sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
+
 </p>
 
-
+ 
         <div className="slideCon">
           <div className="sliderContainer">
             

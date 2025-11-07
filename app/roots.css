@@ -28,7 +28,10 @@
   --globalBlur: 10.7px !important;
   --ani1: #4da6ff !important; 
   --ani2: #3385ff !important; 
-  --ani3: rgb(30, 83, 196) !important; 
+  /* --ani3: rgb(30, 83, 196) !important;  */
+  --ani3: rgb(30, 121, 200) !important; 
   --ani4: #66e0ff !important; 
-  --colorHint: rgba(30, 121, 200, 0.853) !important;
+  --riskColor: rgb(30, 83, 196) !important;
+  /* --colorHint: rgba(30, 121, 200, 0.853) !important; */
+  --colorHint: rgba(30, 83, 196, 0.805) !important;
 }
