@@ -9,8 +9,8 @@
   --sliderBg1: rgba(124, 199, 253, 0.8)!important;
   --sliderBg2: rgba(124, 199, 253, 0.8) !important;
   --sliderBorderGlass: rgba(255, 255, 255, 0.15) !important;
-  --sliderThumbGradientStart: rgba(255, 255, 255, 0.9) !important;
-  --sliderThumbGradientEnd: rgba(255, 255, 255, 0.7) !important;
+  --sliderThumbGradientStart: rgb(255, 255, 255) !important;
+  --sliderThumbGradientEnd: rgb(255, 255, 255) !important;
   --sliderThumbBorder: rgba(255, 255, 255, 0.3) !important;
   --sliderThumbHoverBorder: rgba(255, 255, 255, 0.5) !important;
   --buttonGlassBase: rgba(255, 255, 255, 0.1) !important;
@@ -34,4 +34,7 @@
   --riskColor: rgb(30, 83, 196) !important;
   /* --colorHint: rgba(30, 121, 200, 0.853) !important; */
   --colorHint: rgba(30, 83, 196, 0.805) !important;
+
+  --dots: rgb(255, 255, 255) !important;
+    --dotsActive: #3385ff  !important;
 }

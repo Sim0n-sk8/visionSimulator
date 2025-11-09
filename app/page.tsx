@@ -129,7 +129,7 @@ const MyopiaSimulator = () => {
 
 </p>
 
- 
+{/*  
         <div className="slideCon">
           <div className="sliderContainer">
             
@@ -146,7 +146,7 @@ const MyopiaSimulator = () => {
               }}
             />
 
-            <div className="sliderNumbers">
+            {/* <div className="sliderNumbers">
               {sliderRange.map((num) => (
                 <span
                   key={num}
@@ -155,9 +155,36 @@ const MyopiaSimulator = () => {
                   {-num}
                 </span>
               ))}
+            </div> 
+          </div>
+        </div> */}
+
+          <div className="slideCon">
+            <div className="sliderContainer">
+                    
+            <input
+              type="range"
+              className="slider"
+              min="0"
+              max="10"
+              step="1"
+              value={sliderValue}
+              onChange={(e) => {
+                setSliderValue(parseInt(e.target.value));
+                if (showHint) setShowHint(false);
+              }}
+            />
+
+
+            {/* Dots at snapping points */}
+            <div className="sliderDots">
+              {Array.from({ length: (10 - 0) / 1 + 1 }).map((_, i) => (
+                <span key={i} className={`dot ${i === sliderValue ? 'active' : ''}`} />
+              ))}
             </div>
           </div>
         </div>
+
 
         {/* Correct image rendering for sliding */}
         {(['c', 's', 'o'] as SceneKey[]).map((sceneKey) => (

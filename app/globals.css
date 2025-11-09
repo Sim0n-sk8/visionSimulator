@@ -142,7 +142,7 @@ button.active {
    SLIDER COMPONENTS
 ============================================ */
 
-.slideCon {
+/* .slideCon {
   position: fixed;
   bottom: 20px;
   right: 30px;
@@ -179,9 +179,10 @@ button.active {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  height:80px;
 }
 
-.sliderNumbers {
+/* .sliderNumbers {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -201,7 +202,39 @@ button.active {
   transform: scale(1.4);
   color: var(--colorText);
   text-shadow: 0 1px 3px var(--numberActiveShadow);
+} 
+
+.sliderDots {
+  position: absolute;
+  top: 48%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  padding: 0 15px;
 }
+
+.sliderDots .dot {
+  width: 10px;
+  height: 10px;
+  background: var(--colorText);
+  opacity: 0.4;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sliderDots .dot.active {
+  opacity: 1;
+  background: var(--sliderThumbGradientEnd);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transform: scale(1.2);
+}
+
 
 .slider {
   position: relative;
@@ -222,7 +255,8 @@ button.active {
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-   margin-top: 10px;
+   margin-top: auto;
+   margin-bottom: auto;
   backdrop-filter: blur(--globalBlur);
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--sliderBorderGlass);
@@ -249,7 +283,8 @@ button.active {
   appearance: none;
   width: 30px;
   height: 30px;
-  background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
+  /* background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd)); 
+  background-color: white;
   backdrop-filter: blur(--globalBlur);
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 2px solid var(--sliderThumbBorder);
@@ -289,6 +324,165 @@ button.active {
 .slider::-moz-range-thumb:hover {
   transform: scale(1.1);
 
+  background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
+  box-shadow: 0 3px 12px var(--sliderThumbHoverShadow);
+  border-color: var(--sliderThumbHoverBorder);
+} */
+
+.slideCon {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--colorGradientHint);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
+  border: 1px solid var(--glassBorder);
+  box-shadow: var(--glassShadow);
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.sliderWord{
+  color: var(--colorText);
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.sliderContainer {
+  position: relative;
+  width: 390px;
+  background: var(--riskGlass);
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
+  border: 1px solid var(--glassBorder);
+  box-shadow: var(--glassShadow);
+  border-radius: 10px;
+  padding: 15px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height:80px;
+}
+
+.sliderDots {
+  position: absolute;
+  top: 48%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  padding: 0 26px;
+  z-index: 2499;
+}
+
+.sliderDots .dot {
+  width: 10px;
+  height: 10px;
+  background: var(--dots);
+  opacity: 0.4;
+  border-radius: 50%;
+  /* transition: all 0.3s ease; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2499;
+}
+
+.sliderDots .dot.active {
+  opacity: 0.4;
+  background: var(--dotsActive);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transform: scale(1.2);
+}
+
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(90deg, 
+    var(--sliderBg1) 0%, 
+    var(--sliderBg1) 20%, 
+    var(--sliderBg2) 20%, 
+    var(--sliderBg2) 40%, 
+    var(--sliderBg1) 40%, 
+    var(--sliderBg1) 60%, 
+    var(--sliderBg2) 60%, 
+    var(--sliderBg2) 80%, 
+    var(--sliderBg1) 80%, 
+    var(--sliderBg1) 100%);
+  border-radius: 12px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: auto;
+  margin-bottom: auto;
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
+  border: 1px solid var(--sliderBorderGlass);
+  box-shadow: 0 1px 3px var(--colorShadow);
+}
+
+.slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  background: transparent;
+  border-radius: 12px;
+}
+
+.slider::-moz-range-track {
+  width: 100%;
+  height: 12px;
+  background: transparent;
+  border-radius: 12px;
+  border: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background-color: white ;
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
+  border: 2px solid var(--sliderThumbBorder);
+  box-shadow: 0 2px 8px var(--sliderThumbShadow);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: -9px;
+  z-index: 2500;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
+  box-shadow: 0 3px 12px var(--sliderThumbHoverShadow);
+  border-color: var(--sliderThumbHoverBorder);
+}
+
+.slider::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
+  backdrop-filter: blur(--globalBlur);
+  -webkit-backdrop-filter: blur(--globalBlur);
+  border: 2px solid var(--sliderThumbBorder);
+  box-shadow: 0 2px 8px var(--sliderThumbShadow);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2500;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
   background: linear-gradient(145deg, var(--sliderThumbGradientStart), var(--sliderThumbGradientEnd));
   box-shadow: 0 3px 12px var(--sliderThumbHoverShadow);
   border-color: var(--sliderThumbHoverBorder);
