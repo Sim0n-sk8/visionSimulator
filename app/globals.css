@@ -665,10 +665,10 @@ align-items: center;
     appearance: none;
     flex-shrink: 0 !important;
   }
-
+/* 
 .risk {
-  position: fixed; /* must be fixed */
-  top: 42%;       /* 10% of viewport height from bottom */
+  position: fixed; /* must be fixed 
+  top: 42%;       /* 10% of viewport height from bottom 
   right: 6%;  
   width: 70px;
   height: 50px;
@@ -676,7 +676,7 @@ align-items: center;
   text-align: center;
   border-radius: 15px;
   z-index: 99;
-}
+} */
 
 
 
@@ -833,26 +833,23 @@ align-items: center;
     display: none;
   }
 
-.risk {
-  position: fixed !important;
-  top: 34vh !important;        /* 37% of viewport height */
-  right: 5vw !important;       /* 5% of viewport width */
-  width: 80px !important;       /* scales with screen width */
-  max-width: 80px;  /* optional cap */
-  height: 50px;
-  aspect-ratio: 7 / 5;  /* maintains same shape */
-  font-size: 1.2rem; /* scales with width */
-  text-align: center;
-  border-radius: 15px;
-  z-index: 99;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--riskColor);
-  color: white;
-}
-
-
+ .risk {
+    position: absolute !important; /* Position relative to .slideCon */
+    bottom: calc(100% + 10px) !important; /* Position 15px above the .slideCon's top edge */
+    left: 50% !important; /* Center horizontally */
+    transform: translateX(-50%) !important; /* Adjust for centering */
+    width: 70px !important; /* Fixed width */
+    height: 50px !important; /* Fixed height */
+    font-size: 1rem !important; /* Fixed font size for small mobile */
+    border-radius: 15px !important;
+    padding: 0 !important; /* Remove padding to ensure size is exactly 70x50 */
+    margin: 0 !important; /* Remove margin */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 99; /* Ensure it's above other content */
+    box-sizing: border-box; /* Crucial for width/height */
+  }
 
 
 

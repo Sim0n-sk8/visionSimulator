@@ -123,10 +123,6 @@ const MyopiaSimulator = () => {
           </button>
         </div>
 
-<p className="risk">
-  <span className="riskLabel"><b>MYOPIA</b>&nbsp;RISK LEVEL </span>
-  {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
-</p>
 
 
 {/*  
@@ -159,7 +155,13 @@ const MyopiaSimulator = () => {
           </div>
         </div> */}
 
-          <div className="slideCon">
+         <div className="slideCon">
+            {/* The risk element needs to be here, inside slideCon */}
+            <p className="risk">
+              <span className="riskLabel"><b>MYOPIA</b>&nbsp;RISK LEVEL </span>
+              {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
+            </p>
+
             <div className="sliderContainer">
                     
             <input
