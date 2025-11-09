@@ -834,11 +834,11 @@ align-items: center;
   }
 
 .risk {
-  position: fixed;
-  top: 34vh;        /* 37% of viewport height */
-  right: 5vw;       /* 5% of viewport width */
-  width: 100px;       /* scales with screen width */
-  max-width: 70px;  /* optional cap */
+  position: fixed !important;
+  top: 34vh !important;        /* 37% of viewport height */
+  right: 5vw !important;       /* 5% of viewport width */
+  width: 80px !important;       /* scales with screen width */
+  max-width: 80px;  /* optional cap */
   height: 50px;
   aspect-ratio: 7 / 5;  /* maintains same shape */
   font-size: 1.2rem; /* scales with width */
