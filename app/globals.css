@@ -666,18 +666,11 @@ align-items: center;
     flex-shrink: 0 !important;
   }
 
-  .sliderNumbers {
-    display: flex !important;
-    flex-direction: column-reverse !important;
-    justify-content: space-between !important;
-    height: 335px !important;
-    margin: 0 !important;
-    margin-right: 10px !important;
-    transform: translateX(160px) !important;
-  }
 
 
 
+
+/* 
   .risk {
     width: 100%;
     max-width: 230px;
@@ -694,7 +687,7 @@ align-items: center;
     justify-content: center;
     align-items: center;
     padding: 5px;
-  }
+  } */
 
   .sliderHint {
     position: fixed !important;
@@ -742,7 +735,7 @@ align-items: center;
 
   .slideCon {
     position: absolute !important;
-    bottom: 30% !important;
+    bottom: 27% !important;
     margin-right: -15px !important;
     transform: translateY(50%) !important;
     z-index: 100 !important;
@@ -754,7 +747,7 @@ align-items: center;
   }
 
   .sliderContainer {
-    width: 90px !important;
+    width: 60px !important;
     height: 360px !important;
     padding: 10px !important;
     margin: 0 !important;
@@ -780,7 +773,7 @@ align-items: center;
     flex-shrink: 0 !important;
   }
 
-  .sliderNumbers {
+  /* .sliderNumbers {
     display: flex !important;
     flex-direction: column-reverse !important;
     justify-content: space-between !important;
@@ -788,7 +781,22 @@ align-items: center;
     margin: 0 !important;
     margin-right: 10px !important;
     transform: translateX(160px) !important;
-  }
+  } */
+
+  .sliderDots {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 318px; /* controls visual spacing after rotation */
+  height: auto;
+  padding: 0;
+}
+
 
 
 
@@ -811,29 +819,21 @@ align-items: center;
     padding: 5px;
   } */
 
-  .risk {
-    position: fixed;
-    top: 75px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 99;
-
-    width: 100%;
-    max-width: 240px;
-    height: fit-content;
-
-    font-size: 0.7rem;
-    font-weight: 500; /* ensure valid weight */
-    color: white;
-
-    background-color: var(--riskColor); /* keep the same background */
-    border-radius: 8px;
-    padding: 5px;
-
+  .riskLabel {
     display: none;
-    justify-content: center;
-    align-items: center;
-}
+  }
+
+  .risk {
+    font-size: 1rem; /* make number clearer on small screens */
+    text-align: center;
+    width: 70px;
+    height: 50px;
+    top: 335px;
+    border-radius: 15px;
+    right: 18px !important
+  }
+
+
 
 
   .sliderHint {
