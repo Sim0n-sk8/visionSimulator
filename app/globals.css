@@ -371,7 +371,7 @@ button.active {
 
 .sliderDots {
   position: absolute;
-  top: 47% !important;
+  top: 54% !important;
   left: 0;
   width: 100%;
   transform: translateY(-50%);
@@ -420,8 +420,8 @@ button.active {
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 22px;
+  /* margin-bottom: auto; */
   backdrop-filter: blur(--globalBlur);
   -webkit-backdrop-filter: blur(--globalBlur);
   border: 1px solid var(--sliderBorderGlass);
