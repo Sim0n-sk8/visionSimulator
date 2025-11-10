@@ -371,7 +371,7 @@ button.active {
 
 .sliderDots {
   position: absolute;
-  top: 48%;
+  top: 48% !important;
   left: 0;
   width: 100%;
   transform: translateY(-50%);
