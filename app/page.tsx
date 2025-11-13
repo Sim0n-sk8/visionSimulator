@@ -1,7 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
+
+import { motion, AnimatePresence } from 'framer-motion';
+import { BiBulb, BiQuestionMark } from "react-icons/bi";
+
 
 const MyopiaSimulator = () => {
   type SceneKey = 'c' | 's' | 'o';
@@ -9,19 +13,51 @@ const MyopiaSimulator = () => {
   const [currentScene, setCurrentScene] = useState<SceneKey>('c');
   const [sliderValue, setSliderValue] = useState(0);
   const [showHint, setShowHint] = useState(true);
-
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [tipText,setTipText] = useState(false);
   const sliderRange = Array.from({ length: 11 }, (_, i) => i);
-
   const imagePrefix: Record<SceneKey, string> = {
     c: 'class',
     s: 'street',
     o: 'outdoor',
   };
 
-  const handleSceneChange = (scene: SceneKey) => {
+  
+
+ const handleSceneChange = (scene: SceneKey) => {
     setCurrentScene(scene);
   };
 
+
+ useEffect(() => {
+  const checkScreenSize = () => {
+    setIsSmallScreen(window.innerWidth < 650);
+  };
+  checkScreenSize();
+  window.addEventListener('resize', checkScreenSize);
+  return () => window.removeEventListener('resize',checkScreenSize);
+ },[]);
+  
+ const showTip =() =>{
+  setTipText(!tipText);
+ };
+
+
+
+
+
+ useEffect(() =>{
+  const timeOut = setTimeout(()=>{
+    if(window.innerWidth <650 ){
+         setShowHint(false);
+   }
+  
+  },3000);
+  return() =>{
+    clearTimeout(timeOut);
+  };
+ },[])
+ 
   return (
     <>
       <Head>
@@ -51,7 +87,7 @@ const MyopiaSimulator = () => {
         left: 0,
         width: "100%",
         height: "100%",
-        zIndex: -1, // behind the text
+        zIndex: -1,
       }}
     >
       <style>
@@ -125,67 +161,68 @@ const MyopiaSimulator = () => {
 
 
 
-{/*  
-        <div className="slideCon">
-          <div className="sliderContainer">
-            
-
-            <input
-              type="range"
-              className="slider"
-              min="0"
-              max="10"
-              value={sliderValue}
-              onChange={(e) => {
-                setSliderValue(parseInt(e.target.value));
-                if (showHint) setShowHint(false);
-              }}
-            />
-
-            {/* <div className="sliderNumbers">
-              {sliderRange.map((num) => (
-                <span
-                  key={num}
-                  className={`number ${sliderValue === num ? 'active' : ''}`}
-                >
-                  {-num}
-                </span>
-              ))}
-            </div> 
-          </div>
-        </div> */}
-
-         <div className="slideCon">
-            {/* The risk element needs to be here, inside slideCon */}
-            <p className="risk">
-              <span className="riskLabel"><b>MYOPIA</b>&nbsp;RISK LEVEL </span>
-              {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
-            </p>
-
-            <div className="sliderContainer">
-                    
-            <input
-              type="range"
-              className="slider"
-              min="0"
-              max="10"
-              step="1"
-              value={sliderValue}
-              onChange={(e) => {
-                setSliderValue(parseInt(e.target.value));
-                if (showHint) setShowHint(false);
-              }}
-            />
 
 
-            {/* Dots at snapping points */}
-            <div className="sliderDots">
-              {Array.from({ length: (10 - 0) / 1 + 1 }).map((_, i) => (
-                <span key={i} className={`dot ${i === sliderValue ? 'active' : ''}`} />
-              ))}
-            </div>
-          </div>
+      <div className="slideCon">
+        <p className={`risk ${tipText ? "active-risk" : ""}` } onClick={showTip}>
+          <span className="riskLabel"><b>MYOPIA</b>&nbsp;RISK LEVEL </span>
+            {sliderValue !== 0 ? -Math.abs(sliderValue) : 0}.00D
+        </p>
+
+
+        <div className={`tipTextContainer ${tipText ? "active" : ""}`}>
+          <p className="tipText">Myopia Risk Level:</p>
         </div>
+
+
+{isSmallScreen && (
+  <div className="tooltipcontainer" onClick={showTip}>
+    <AnimatePresence mode="sync" initial={false} >
+      <motion.div
+        key={tipText ? 'bulb' : 'question'}
+
+        initial={{ opacity: 0, rotate: 0 }}
+        animate={{ opacity: 1, rotate: 360 }}
+        exit={{ opacity: 0, rotate: 360 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        style={{ position: 'absolute' }} // overlap both icons
+      >
+        {tipText ? <BiBulb className="tooltip"/> : <BiQuestionMark className="tooltip"/>}
+      </motion.div>
+    </AnimatePresence>
+  </div>
+)}
+
+
+
+          <div className="sliderContainer">  
+              <input
+                type="range"
+                className="slider"
+                min="0"
+                max="10"
+                step="1"
+                value={sliderValue}
+                onChange={(e) => {
+                  setSliderValue(parseInt(e.target.value));
+                  if (showHint) setShowHint(false);
+                }}
+              />
+
+
+              {/* Dots at snapping points */}
+              <div className="sliderDots">
+                {Array.from({ length: (10 - 0) / 1 + 1 }).map((_, i) => (
+                  <span key={i} className={`dot ${i === sliderValue ? 'active' : ''}`} />
+                ))}
+              </div>
+              </div>
+          </div>
+
+   
+
+
+  
 
 
         {/* Correct image rendering for sliding */}
