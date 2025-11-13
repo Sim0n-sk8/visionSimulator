@@ -68,12 +68,10 @@ hr {
   box-shadow: var(--glassShadow);
   padding: 5px;
   border-radius: 15px;
-  transition: transform 0.1s ease-in-out;
+  
 }
 
-.buttonGroup:active {
-  transform: scale(0.98);
-}
+
 
 button {
   background: var(--riskGlass);
@@ -103,7 +101,7 @@ button:hover {
 button:active,
 button.active {
   background: var(--buttonGlassActive);
-  border: 2px solid var(--colorBorderActive);
+  border: 1px solid var(--colorBorderActive);
   color: var(--colorText);
   transform: scale(1);
   box-shadow: 0 2px 6px var(--sliderShadowInset);
